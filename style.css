@@ -27,6 +27,8 @@ h2 {
 a {
   color: royalblue;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 p {
