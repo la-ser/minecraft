@@ -11,6 +11,25 @@ body {
   flex-direction: column;
 }
 
+/*             Scrollbar             */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(128, 128, 128, 1);
+  transition: 1s;
+  /*border-radius: 5px;*/
+}
+
+::-webkit-scrollbar-thumb {
+  outline: 0.5px solid gray;
+  background: rgb(31, 31, 31);
+  transition: 1s;
+  /*border-radius: 5px;*/
+}
+
 * {
   text-align: center;
 }
@@ -33,4 +52,24 @@ a {
 
 p {
   color: rgb(128, 128, 128);
+}
+
+ul {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  background-color: rgb(20, 20, 20);
+  width: 50%;
+  height: 60%;
+  overflow-x: hidden;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+hr {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  margin-top: -5px;
 }
