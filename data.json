@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Border Game",
+    "description": "Start with a small border and expand it as you gather more experience.",
+    "features": [
+      "start command [/function xps:start]",
+      "auto border expansion",
+      "keep your experience but not your items [/gamerule keepInventory true]"
+    ],
+    "link": "https://www.dropbox.com/s/k9lzugn5s02q307/border%20game%201.3.zip?dl=1",
+    "date": "30.03.2023",
+    "version": "1.3"
+  },
+  {
+    "name": "Skyblock",
+    "description": "Survive on a small island and break blocks to expand and survive.",
+    "features": ["random events", "percentage"],
+    "link": "#soon",
+    "date": "Coming Soon",
+    "version": "0.0"
+  }
+]
