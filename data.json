@@ -14,7 +14,11 @@
   {
     "name": "Skyblock",
     "description": "Survive on a small island, break blocks to expand and survive.",
-    "features": ["random events", "percentage"],
+    "features": [
+      "random events",
+      "percentage",
+      "<a id='gen' href='./gen/skyblock/'>Generator</a>"
+    ],
     "link": "#soon",
     "date": "Coming Soon",
     "version": "0.0"

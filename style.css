@@ -55,6 +55,11 @@ a {
   outline-offset: -4px;
 }
 
+a#gen {
+  padding: 0px 40px;
+  background-color: limegreen;
+}
+
 a:hover {
   opacity: 1;
 }
