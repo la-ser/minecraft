@@ -91,3 +91,8 @@ th {
   padding: 5px;
   background-color: var(--color2);
 }
+
+button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

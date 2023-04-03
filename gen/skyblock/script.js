@@ -1,10 +1,11 @@
-window.addEventListener("beforeunload", function (event) {
-  event.preventDefault();
-  event.returnValue = "";
-});
+// window.addEventListener("beforeunload", function (event) {
+//   event.preventDefault();
+//   event.returnValue = "";
+// });
 
 const score_name = document.getElementById("score_name");
 const score_objective = document.getElementById("score_objective");
+let score_max = 1000;
 
 const outputText = document.getElementById("output");
 const table = document.getElementById("ranges");
@@ -25,10 +26,14 @@ addRowBtn.addEventListener("click", () => {
 
   row.innerHTML =
     `
-      <td><input type="number" min="1" max="1000" value=` +
+      <td><input type="number" min="1" max=` +
+    score_max +
+    ` value=` +
     prevEndValue1 +
     `></td>
-      <td><input type="number" min="1" max="1000" value=` +
+      <td><input type="number" min="1" max=` +
+    score_max +
+    ` value=` +
     prevEndValue2 +
     `></td>
       <td><input id="text" type="text"></td>
