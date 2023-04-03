@@ -2,7 +2,6 @@ window.addEventListener("beforeunload", function (event) {
   var checkBox = document.getElementById("check_save");
 
   if (checkBox.checked == true) {
-    console.log("1");
     event.preventDefault();
     event.returnValue = "";
   }
@@ -10,12 +9,20 @@ window.addEventListener("beforeunload", function (event) {
 
 const score_name = document.getElementById("score_name");
 const score_objective = document.getElementById("score_objective");
-let score_max = 1000;
 
 const outputText = document.getElementById("output");
 const table = document.getElementById("ranges");
 const addRowBtn = document.getElementById("add-row");
 const generateBtn = document.getElementById("generate");
+
+let score_min = 1;
+let score_max = 5000;
+const fromLoad = document.getElementById("fromLoad");
+const toLoad = document.getElementById("toLoad");
+// fromLoad.max = score_min;
+fromLoad.value = score_min;
+// toLoad.max = score_max;
+toLoad.value = score_max;
 
 addRowBtn.addEventListener("click", () => {
   const row = table.insertRow(-1);

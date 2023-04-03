@@ -16,7 +16,7 @@
   </head>
   <body>
     Savemode:
-    <input checked type="checkbox" id="check_save" onclick="check_save()" />
+    <input checked type="checkbox" id="check_save" />
     <div id="main">
       <div id="settings">
         <input
@@ -45,8 +45,8 @@
           </thead>
           <tbody>
             <tr>
-              <td><input type="number" min="1" max="1000" value="1" /></td>
-              <td><input type="number" min="1" max="1000" value="1000" /></td>
+              <td><input type="number" min="1" id="fromLoad" /></td>
+              <td><input type="number" min="1" id="toLoad" /></td>
               <td>
                 <input id="text" type="text" placeholder="dirt / chicken" />
               </td>
@@ -68,16 +68,5 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-      function check_save() {
-        var checkBox = document.getElementById("check_save");
-
-        if (checkBox.checked == true) {
-          console.log("checked");
-        } else {
-          console.log("not checked");
-        }
-      }
-    </script>
   </body>
 </html>

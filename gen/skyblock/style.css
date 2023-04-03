@@ -72,6 +72,10 @@ option {
   border-radius: 0px;
 }
 
+input[type="number"] {
+  width: 100%;
+}
+
 button:hover {
   background-color: gray;
   cursor: pointer;
