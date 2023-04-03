@@ -1,7 +1,7 @@
-// window.addEventListener("beforeunload", function (event) {
-//   event.preventDefault();
-//   event.returnValue = "";
-// });
+window.addEventListener("beforeunload", function (event) {
+  event.preventDefault();
+  event.returnValue = "";
+});
 
 const score_name = document.getElementById("score_name");
 const score_objective = document.getElementById("score_objective");
