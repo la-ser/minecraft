@@ -100,3 +100,10 @@ button.disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+a#back {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
