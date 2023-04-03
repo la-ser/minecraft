@@ -16,7 +16,7 @@ const addRowBtn = document.getElementById("add-row");
 const generateBtn = document.getElementById("generate");
 
 let score_min = 1;
-let score_max = 5000;
+let score_max = 1000;
 const fromLoad = document.getElementById("fromLoad");
 const toLoad = document.getElementById("toLoad");
 // fromLoad.max = score_min;
