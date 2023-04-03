@@ -1,7 +1,7 @@
-window.addEventListener("beforeunload", function (event) {
-  event.preventDefault();
-  event.returnValue = "";
-});
+// window.addEventListener("beforeunload", function (event) {
+//   event.preventDefault();
+//   event.returnValue = "";
+// });
 
 const score_name = document.getElementById("score_name");
 const score_objective = document.getElementById("score_objective");
@@ -13,9 +13,24 @@ const generateBtn = document.getElementById("generate");
 
 addRowBtn.addEventListener("click", () => {
   const row = table.insertRow(-1);
-  row.innerHTML = `
-      <td><input type="number" min="1" max="1000" value="1"></td>
-      <td><input type="number" min="1" max="1000" value="1000"></td>
+
+  const tableRows = table.rows;
+
+  const tableLength = parseInt(tableRows.length - 2);
+
+  const rowCells = tableRows[tableLength].cells;
+  const to = parseInt(rowCells[1].querySelector("input").value);
+  prevEndValue1 = parseInt(to) + 1;
+  prevEndValue2 = parseInt(to) + 2;
+
+  row.innerHTML =
+    `
+      <td><input type="number" min="1" max="1000" value=` +
+    prevEndValue1 +
+    `></td>
+      <td><input type="number" min="1" max="1000" value=` +
+    prevEndValue2 +
+    `></td>
       <td><input id="text" type="text"></td>
       <td>
           <select>
@@ -26,6 +41,7 @@ addRowBtn.addEventListener("click", () => {
       </td>
       <td><button class="remove-row">Remove</button></td>
   `;
+
   const removeRowBtn = row.querySelector(".remove-row");
   removeRowBtn.addEventListener("click", () => {
     table.deleteRow(row.rowIndex);
