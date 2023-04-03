@@ -1,6 +1,11 @@
 window.addEventListener("beforeunload", function (event) {
-  event.preventDefault();
-  event.returnValue = "";
+  var checkBox = document.getElementById("check_save");
+
+  if (checkBox.checked == true) {
+    console.log("1");
+    event.preventDefault();
+    event.returnValue = "";
+  }
 });
 
 const score_name = document.getElementById("score_name");
@@ -36,7 +41,7 @@ addRowBtn.addEventListener("click", () => {
     ` value=` +
     prevEndValue2 +
     `></td>
-      <td><input id="text" type="text"></td>
+      <td><input id="text" type="text" placeholder="dirt / chicken"></td>
       <td>
           <select>
               <option value="other">Other</option>

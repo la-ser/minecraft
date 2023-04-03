@@ -15,6 +15,8 @@
     <title>laser Inc. • Skyblock Gen</title>
   </head>
   <body>
+    Savemode:
+    <input checked type="checkbox" id="check_save" onclick="check_save()" />
     <div id="main">
       <div id="settings">
         <input
@@ -36,8 +38,8 @@
             <tr>
               <th>From</th>
               <th>To</th>
-              <th>Text</th>
-              <th>Option</th>
+              <th>Event</th>
+              <th>Type</th>
               <th></th>
             </tr>
           </thead>
@@ -45,7 +47,9 @@
             <tr>
               <td><input type="number" min="1" max="1000" value="1" /></td>
               <td><input type="number" min="1" max="1000" value="1000" /></td>
-              <td><input id="text" type="text" /></td>
+              <td>
+                <input id="text" type="text" placeholder="dirt / chicken" />
+              </td>
               <td>
                 <select>
                   <option value="other">Other</option>
@@ -64,5 +68,16 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+      function check_save() {
+        var checkBox = document.getElementById("check_save");
+
+        if (checkBox.checked == true) {
+          console.log("checked");
+        } else {
+          console.log("not checked");
+        }
+      }
+    </script>
   </body>
 </html>
