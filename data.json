@@ -12,6 +12,17 @@
     "version": "1.3"
   },
   {
+    "name": "30 Seconds Item",
+    "description": "Get a random every 30 seconds and expand the world.",
+    "features": [
+      "start command [/function 30sec:start]",
+      "get a random item every 30 seconds"
+    ],
+    "link": "https://www.dropbox.com/s/c1wyrobvbio1opk/30sek%20item.zip?dl=1",
+    "date": "06.04.2023",
+    "version": "1.0"
+  },
+  {
     "name": "Skyblock",
     "description": "Survive on a small island, break blocks to expand and survive.",
     "features": [
