@@ -12,9 +12,17 @@
   },
   {
     "name": "30 Seconds Item [datapack]",
-    "description": "Get a random every 30 seconds and test your luck",
+    "description": "Get a random every 30 seconds and test your luck.",
     "features": ["get a random item every 30 seconds"],
     "link": "https://www.dropbox.com/s/b0dbub6608jko00/laser%20DP%20-%2030%20sec%20item.zip?dl=1",
+    "date": "08.04.2023",
+    "version": "1.1"
+  },
+  {
+    "name": "Random Block Drops [datapack]",
+    "description": "Get a random item from breaking blocks.",
+    "features": ["get a random item every 30 seconds", "<a id='new'>NEW</a>"],
+    "link": "https://www.dropbox.com/s/dzj9m9yzc5vvhuv/laser%20DP%20-%20random%20item.zip?dl=1",
     "date": "08.04.2023",
     "version": "1.1"
   },
