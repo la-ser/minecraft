@@ -74,6 +74,15 @@ a#new {
   border-radius: 5px;
 }
 
+a#warn {
+  padding: 0px 10px;
+  background-color: red;
+  opacity: 1;
+  color: white;
+  outline: none;
+  border-radius: 5px;
+}
+
 p {
   color: rgb(128, 128, 128);
 }
