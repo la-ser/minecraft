@@ -51,9 +51,9 @@ addRowBtn.addEventListener("click", () => {
       <td><input id="text" type="text" placeholder="dirt / chicken"></td>
       <td>
           <select>
+          <option value="block">Block</option>
+          <option value="summon">Summon</option>
               <option value="other">Other</option>
-              <option value="block">Block</option>
-              <option value="summon">Summon</option>
           </select>
       </td>
       <td><button class="remove-row">Remove</button></td>
