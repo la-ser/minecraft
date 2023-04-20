@@ -44,11 +44,12 @@
   </style>
   <body>
     <a id="back" href="../../">BACK</a>
-    Savemode:
+    <a>Savemode:</a>
     <input type="checkbox" id="check_save" />
+    <a style="color: red; font-size: 10px">BLOCK LIST STILL CONTAINS ITEMS</a>
     <button style="position: absolute; right: 0" onclick="toggleSearch()">SEARCH</button>
 
-    <div id="searchbox" class="">
+    <div id="searchbox" class="hidden">
       <input style="width: 100%" type="range" min="10" max="50" value="25" id="searchSlider" />
       <input id="searchbar" onkeyup="search_item()" type="text" name="search" placeholder="Search for mc-list.." />
       <div id="searchCategories">
