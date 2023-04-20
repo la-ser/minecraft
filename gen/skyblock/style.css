@@ -16,7 +16,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--scroll-color);
+  background: gray;
   transition: 1s;
   /*border-radius: 5px;*/
 }
@@ -41,6 +41,7 @@ div#main {
   height: fit-content;
   background-color: var(--color2);
   height: 100%;
+  overflow-x: hidden;
 }
 
 div#rows {
@@ -106,4 +107,71 @@ a#back {
   text-decoration: none;
   margin-right: 10px;
   margin-left: 10px;
+}
+
+/* new */
+
+div#searchbox {
+  height: 100vh;
+  width: 25%;
+  background-color: rgb(31, 31, 31);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 10;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+div#searchbox input#searchbar {
+  position: sticky;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 40px;
+  background-color: rgb(0, 0, 0, 1);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.mc-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  width: 60px;
+  margin: 5px;
+  padding: 0;
+  background-color: red;
+  font-size: 13px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  word-break: break-all;
+}
+
+.mc-list:hover {
+  cursor: pointer;
+  outline: 1px solid white;
+}
+
+.mc-block {
+  background-color: royalblue;
+}
+
+.mc-summon {
+  background-color: limegreen;
+}
+
+ol#searchList {
+  display: flex;
+  flex-wrap: wrap;
 }
