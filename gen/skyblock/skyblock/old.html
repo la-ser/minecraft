@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
+            user-scalable=0"
+    />
+    <link
+      rel="icon"
+      href="https://la-ser.github.io/src/icons/L.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>laser Inc. • Skyblock Gen</title>
+  </head>
+  <body>
+    <a id="back" href="../../">BACK</a>
+    Savemode:
+    <input checked type="checkbox" id="check_save" />
+    <div id="main">
+      <div id="settings">
+        <input
+          type="text"
+          id="score_name"
+          value=".number"
+          placeholder="score_name"
+        />
+        <input
+          type="text"
+          id="score_objective"
+          value="data_skyblock"
+          placeholder="score_objective"
+        />
+      </div>
+      <div id="rows">
+        <table id="ranges">
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>To</th>
+              <th>Event</th>
+              <th>Type</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="number" min="1" id="fromLoad" /></td>
+              <td><input type="number" min="1" id="toLoad" /></td>
+              <td>
+                <input id="text" type="text" placeholder="dirt / chicken" />
+              </td>
+              <td>
+                <select>
+                  <option value="block">Block</option>
+                  <option value="summon">Summon</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td><button class="remove-row disabled">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="add-row">Add Row</button>
+        <button id="generate">Generate Output</button>
+      </div>
+      <textarea id="output" disabled></textarea>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
