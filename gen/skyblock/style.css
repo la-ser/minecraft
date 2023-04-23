@@ -97,6 +97,33 @@ th {
   background-color: var(--color2);
 }
 
+div#input {
+  left: 0;
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  background-color: rgb(31, 31, 31);
+}
+
+textarea#input_code {
+  background-color: rgb(31, 31, 31);
+  color: white;
+  overflow-y: hidden;
+  resize: none;
+  bottom: 0;
+  height: fit-content;
+}
+
+#input_code,
+#input_button {
+  height: 100%;
+  margin: 0;
+  bottom: 0;
+  border: none;
+}
+
 button.disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -123,15 +150,34 @@ div#searchbox {
   overflow-y: scroll;
 }
 
+div#sticky-input {
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
 div#searchbox input#searchbar {
   position: sticky;
   left: 0;
   top: 0;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 75%;
   height: 40px;
   background-color: rgb(0, 0, 0, 1);
+}
+
+div#searchbox input#searchpercentage {
+  position: sticky;
+  right: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  height: 40px;
+  background-color: rgb(20, 20, 20, 1);
 }
 
 .hidden {
@@ -170,4 +216,58 @@ div#searchbox input#searchbar {
 ol#searchList {
   display: flex;
   flex-wrap: wrap;
+}
+
+.mc-list-cat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 60px;
+  margin: 5px;
+  padding: 0;
+  background-color: red;
+  font-size: 13px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  word-break: break-all;
+}
+
+#searchSlider {
+  width: 100%;
+}
+
+#searchCategories {
+  position: sticky;
+  padding: 0;
+  margin: 0;
+  height: fit-content;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(31, 31, 31);
+}
+
+#mc-all-cat {
+  background-color: crimson;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#mc-block-cat {
+  background-color: royalblue;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#mc-summon-cat {
+  background-color: limegreen;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
 }

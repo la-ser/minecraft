@@ -25,8 +25,10 @@ let score_min = 1;
 let score_max = 1000;
 const fromLoad = document.getElementById("fromLoad");
 const toLoad = document.getElementById("toLoad");
-// fromLoad.value = score_min;
-// toLoad.value = score_max;
+// fromLoad.max = score_min;
+fromLoad.value = score_min;
+// toLoad.max = score_max;
+toLoad.value = score_max;
 
 addRowBtn.addEventListener("click", addRow);
 
@@ -73,13 +75,8 @@ function addRow(iText, iType) {
       table.deleteRow(row.rowIndex);
     });
   } else {
-    const searchPercentage = document.getElementById("searchpercentage");
-    if (searchPercentage.value) {
-      prevEndValue2 = prevEndValue1 - 1 + parseInt(searchPercentage.value);
-      prevEndValue2 = parseInt(prevEndValue2);
-    }
     if (iType == "summon") {
-      // console.log("summon type");
+      console.log("summon type");
       row.innerHTML =
         `
       <td><input type="number" min="1" max=` +
@@ -108,7 +105,7 @@ function addRow(iText, iType) {
         table.deleteRow(row.rowIndex);
       });
     } else if (iType == "block") {
-      // console.log("block type");
+      console.log("block type");
       row.innerHTML =
         `
       <td><input type="number" min="1" max=` +
@@ -251,95 +248,3 @@ summonsCategory.addEventListener("click", () => {
     box.classList.add("hidden");
   }
 });
-
-//output / inupt code to reuse
-const inputCode = document.getElementById("input_code");
-const tableBody = document.getElementById("tableBody");
-
-// function getCode() {
-//   // console.log(tableBody.innerHTML);
-//   // outputText.innerHTML = tableBody.innerHTML.replace(/\s/g, ""); // err
-//   // outputText.innerHTML = tableBody.innerHTML.replace(/^./, "");
-//   const firstFrom = document.getElementById("fromLoad");
-//   const firstTo = document.getElementById("toLoad");
-//   console.log(firstFrom);
-
-//   outputText.innerHTML = tableBody.innerHTML;
-// }
-
-function submitInput() {
-  loadTableData(inputCode.value);
-}
-
-function generateTableData() {
-  const rows = table.rows;
-  let output = "";
-
-  for (let i = 0; i < rows.length; i++) {
-    const cells = rows[i].cells;
-    let rowOutput = "";
-
-    for (let j = 0; j < cells.length; j++) {
-      const input = cells[j].querySelector("input,select");
-      if (input) {
-        rowOutput += input.value + ",";
-      }
-    }
-
-    output += rowOutput.slice(0, -1) + "\n";
-  }
-
-  // return output;
-  outputText.innerHTML = output;
-}
-
-function loadTableData(data) {
-  while (table.children.length > 1) {
-    table.removeChild(table.lastElementChild);
-  }
-
-  const rows = data.split("\n");
-
-  for (let i = 0; i < rows.length; i++) {
-    if (rows[i] === "") {
-      continue;
-    }
-
-    const cells = rows[i].split(",");
-    const row = table.insertRow();
-
-    for (let j = 0; j < cells.length; j++) {
-      const cell = row.insertCell();
-      let inputType = "text";
-
-      if (j === 0 || j === 1) {
-        inputType = "number";
-      } else if (j === 3) {
-        const select = document.createElement("select");
-        const options = ["block", "summon", "other"];
-        for (let k = 0; k < options.length; k++) {
-          const option = document.createElement("option");
-          option.value = options[k];
-          option.text = options[k];
-          select.appendChild(option);
-        }
-        cell.appendChild(select);
-        select.selectedIndex = options.indexOf(cells[j]);
-        continue;
-      }
-
-      const input = document.createElement("input");
-      input.type = inputType;
-      input.value = cells[j];
-      cell.appendChild(input);
-    }
-
-    const cell = row.insertCell();
-    const button = document.createElement("button");
-    button.textContent = "Remove";
-    button.addEventListener("click", () => {
-      table.deleteRow(row.rowIndex);
-    });
-    cell.appendChild(button);
-  }
-}

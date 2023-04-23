@@ -10,24 +10,52 @@
     <link rel="stylesheet" href="style.css" />
     <title>laser Inc. • Skyblock Gen</title>
   </head>
-  <style></style>
+  <style>
+    #searchCategories {
+      position: sticky;
+      padding: 0;
+      margin: 0;
+      height: fit-content;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(31, 31, 31);
+    }
+
+    #mc-all-cat {
+      background-color: crimson;
+      width: 100px;
+      height: 50px;
+    }
+
+    #mc-block-cat {
+      background-color: royalblue;
+      width: 100px;
+      height: 50px;
+    }
+
+    #mc-summon-cat {
+      background-color: limegreen;
+      width: 100px;
+      height: 50px;
+    }
+  </style>
   <body>
     <a id="back" href="../../">BACK</a>
     <a>Savemode:</a>
     <input type="checkbox" id="check_save" />
-    <a style="color: red; font-size: 10px" onclick="generateTableData()">BLOCK LIST STILL CONTAINS ITEMS</a>
+    <a style="color: red; font-size: 10px">BLOCK LIST STILL CONTAINS ITEMS</a>
     <button style="position: absolute; right: 0" onclick="toggleSearch()">SEARCH</button>
 
     <div id="searchbox" class="hidden">
-      <input type="range" min="10" max="50" value="25" id="searchSlider" />
-      <div id="sticky-input">
-        <input type="number" min="1" placeholder="%" name="percentage" id="searchpercentage" />
-        <input id="searchbar" onkeyup="search_item()" type="text" name="search" placeholder="Search for mc-list.." />
-      </div>
+      <input style="width: 100%" type="range" min="10" max="50" value="25" id="searchSlider" />
+      <input id="searchbar" onkeyup="search_item()" type="text" name="search" placeholder="Search for mc-list.." />
       <div id="searchCategories">
-        <a class="mc-list-cat" id="mc-all-cat">all</a>
-        <a class="mc-list-cat" id="mc-block-cat">blocks</a>
-        <a class="mc-list-cat" id="mc-summon-cat">summons</a>
+        <a class="mc-list" id="mc-all-cat">all</a>
+        <a class="mc-list" id="mc-block-cat">blocks</a>
+        <a class="mc-list" id="mc-summon-cat">summons</a>
       </div>
 
       <ol id="searchList">
@@ -1207,10 +1235,6 @@
 
     <div id="main">
       <div id="settings">
-        <div id="input">
-          <textarea id="input_code" rows="1"></textarea>
-          <button id="input_button" onclick="submitInput()">Submit</button>
-        </div>
         <input type="text" id="score_name" value=".number" placeholder="score_name" />
         <input type="text" id="score_objective" value="data_skyblock" placeholder="score_objective" />
       </div>
@@ -1225,10 +1249,10 @@
               <th></th>
             </tr>
           </thead>
-          <tbody id="tableBody">
+          <tbody>
             <tr>
-              <td><input type="number" min="1" id="fromLoad" value="1" /></td>
-              <td><input type="number" min="1" id="toLoad" value="1000" /></td>
+              <td><input type="number" min="1" id="fromLoad" /></td>
+              <td><input type="number" min="1" id="toLoad" /></td>
               <td>
                 <input id="text" type="text" placeholder="dirt / chicken" />
               </td>
