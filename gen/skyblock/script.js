@@ -361,11 +361,13 @@ function genCode() {
 function saveCode() {
   const outputCode = generateTableData();
   setCookie("codeSave", encodeCookieValue(outputCode));
+  alertBox("Table has been saved!");
 }
 
 function loadCode() {
   const codeSave = decodeCookieValue(getCookie("codeSave"));
   loadTableData(codeSave);
+  alertBox("Table has been loaded!");
 }
 
 function setCookie(name, value) {
@@ -400,4 +402,14 @@ function encodeCookieValue(value) {
 }
 function decodeCookieValue(value) {
   return decodeURIComponent(value);
+}
+
+// alert box
+function alertBox(text) {
+  const alertBox = document.getElementById("alertBox");
+  alertBox.children[0].innerHTML = text;
+  alertBox.style.display = "flex";
+  setTimeout(function () {
+    alertBox.style.display = "";
+  }, 5000);
 }

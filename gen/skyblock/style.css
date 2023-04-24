@@ -302,3 +302,20 @@ ol#searchList {
   height: 50px;
   cursor: pointer;
 }
+
+div#alertBox {
+  position: absolute;
+  width: 300px;
+  aspect-ratio: 4;
+  background-color: limegreen;
+  left: 50%;
+  transform: translate(-50%);
+  top: 20px;
+  z-index: 20;
+  outline: 2px dashed white;
+  outline-offset: -10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
