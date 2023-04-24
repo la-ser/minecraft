@@ -15,8 +15,7 @@
     <a id="back" href="../../">BACK</a>
     <a>Savemode:</a>
     <input type="checkbox" id="check_save" />
-    <a style="color: red; font-size: 10px" onclick="generateTableData()">BLOCK LIST STILL CONTAINS ITEMS</a>
-    <button style="position: absolute; right: 0" onclick="toggleSearch()">SEARCH</button>
+    <button id="searchButton" onclick="toggleSearch()">SEARCH</button>
 
     <div id="searchbox" class="hidden">
       <input type="range" min="10" max="50" value="25" id="searchSlider" />
@@ -32,6 +31,7 @@
 
       <ol id="searchList">
         <!-- BLOCKS -->
+
         <a data-name="stone" class="mc-list mc-block" onclick="item_select('stone', 'block')">stone</a>
         <a data-name="granite" class="mc-list mc-block" onclick="item_select('granite', 'block')">granite</a>
         <a data-name="polished_granite" class="mc-list mc-block" onclick="item_select('polished_granite', 'block')">polished_granite</a>
@@ -637,9 +637,7 @@
         <a data-name="daylight_detector" class="mc-list mc-block" onclick="item_select('daylight_detector', 'block')">daylight_detector</a>
         <a data-name="sculk_sensor" class="mc-list mc-block" onclick="item_select('sculk_sensor', 'block')">sculk_sensor</a>
         <a data-name="tripwire_hook" class="mc-list mc-block" onclick="item_select('tripwire_hook', 'block')">tripwire_hook</a>
-        <a data-name="trapped_chest" class="mc-list mc-block" onclick="item_select('trapped_chest', 'block')">trapped_chest</a>
         <a data-name="tnt" class="mc-list mc-block" onclick="item_select('tnt', 'block')">tnt</a>
-        <a data-name="redstone_lamp" class="mc-list mc-block" onclick="item_select('redstone_lamp', 'block')">redstone_lamp</a>
         <a data-name="note_block" class="mc-list mc-block" onclick="item_select('note_block', 'block')">note_block</a>
         <a data-name="stone_button" class="mc-list mc-block" onclick="item_select('stone_button', 'block')">stone_button</a>
         <a data-name="polished_blackstone_button" class="mc-list mc-block" onclick="item_select('polished_blackstone_button', 'block')">polished_blackstone_button</a>
@@ -698,119 +696,8 @@
         <a data-name="detector_rail" class="mc-list mc-block" onclick="item_select('detector_rail', 'block')">detector_rail</a>
         <a data-name="rail" class="mc-list mc-block" onclick="item_select('rail', 'block')">rail</a>
         <a data-name="activator_rail" class="mc-list mc-block" onclick="item_select('activator_rail', 'block')">activator_rail</a>
-        <a data-name="saddle" class="mc-list mc-block" onclick="item_select('saddle', 'block')">saddle</a>
-        <a data-name="minecart" class="mc-list mc-block" onclick="item_select('minecart', 'block')">minecart</a>
-        <a data-name="chest_minecart" class="mc-list mc-block" onclick="item_select('chest_minecart', 'block')">chest_minecart</a>
-        <a data-name="furnace_minecart" class="mc-list mc-block" onclick="item_select('furnace_minecart', 'block')">furnace_minecart</a>
-        <a data-name="tnt_minecart" class="mc-list mc-block" onclick="item_select('tnt_minecart', 'block')">tnt_minecart</a>
-        <a data-name="hopper_minecart" class="mc-list mc-block" onclick="item_select('hopper_minecart', 'block')">hopper_minecart</a>
-        <a data-name="carrot_on_a_stick" class="mc-list mc-block" onclick="item_select('carrot_on_a_stick', 'block')">carrot_on_a_stick</a>
-        <a data-name="warped_fungus_on_a_stick" class="mc-list mc-block" onclick="item_select('warped_fungus_on_a_stick', 'block')">warped_fungus_on_a_stick</a>
-        <a data-name="elytra" class="mc-list mc-block" onclick="item_select('elytra', 'block')">elytra</a>
-        <a data-name="oak_boat" class="mc-list mc-block" onclick="item_select('oak_boat', 'block')">oak_boat</a>
-        <a data-name="oak_chest_boat" class="mc-list mc-block" onclick="item_select('oak_chest_boat', 'block')">oak_chest_boat</a>
-        <a data-name="spruce_boat" class="mc-list mc-block" onclick="item_select('spruce_boat', 'block')">spruce_boat</a>
-        <a data-name="spruce_chest_boat" class="mc-list mc-block" onclick="item_select('spruce_chest_boat', 'block')">spruce_chest_boat</a>
-        <a data-name="birch_boat" class="mc-list mc-block" onclick="item_select('birch_boat', 'block')">birch_boat</a>
-        <a data-name="birch_chest_boat" class="mc-list mc-block" onclick="item_select('birch_chest_boat', 'block')">birch_chest_boat</a>
-        <a data-name="jungle_boat" class="mc-list mc-block" onclick="item_select('jungle_boat', 'block')">jungle_boat</a>
-        <a data-name="jungle_chest_boat" class="mc-list mc-block" onclick="item_select('jungle_chest_boat', 'block')">jungle_chest_boat</a>
-        <a data-name="acacia_boat" class="mc-list mc-block" onclick="item_select('acacia_boat', 'block')">acacia_boat</a>
-        <a data-name="acacia_chest_boat" class="mc-list mc-block" onclick="item_select('acacia_chest_boat', 'block')">acacia_chest_boat</a>
-        <a data-name="dark_oak_boat" class="mc-list mc-block" onclick="item_select('dark_oak_boat', 'block')">dark_oak_boat</a>
-        <a data-name="dark_oak_chest_boat" class="mc-list mc-block" onclick="item_select('dark_oak_chest_boat', 'block')">dark_oak_chest_boat</a>
-        <a data-name="mangrove_boat" class="mc-list mc-block" onclick="item_select('mangrove_boat', 'block')">mangrove_boat</a>
-        <a data-name="mangrove_chest_boat" class="mc-list mc-block" onclick="item_select('mangrove_chest_boat', 'block')">mangrove_chest_boat</a>
-        <a data-name="turtle_helmet" class="mc-list mc-block" onclick="item_select('turtle_helmet', 'block')">turtle_helmet</a>
-        <a data-name="scute" class="mc-list mc-block" onclick="item_select('scute', 'block')">scute</a>
-        <a data-name="flint_and_steel" class="mc-list mc-block" onclick="item_select('flint_and_steel', 'block')">flint_and_steel</a>
-        <a data-name="apple" class="mc-list mc-block" onclick="item_select('apple', 'block')">apple</a>
-        <a data-name="bow" class="mc-list mc-block" onclick="item_select('bow', 'block')">bow</a>
-        <a data-name="arrow" class="mc-list mc-block" onclick="item_select('arrow', 'block')">arrow</a>
-        <a data-name="coal" class="mc-list mc-block" onclick="item_select('coal', 'block')">coal</a>
-        <a data-name="charcoal" class="mc-list mc-block" onclick="item_select('charcoal', 'block')">charcoal</a>
-        <a data-name="diamond" class="mc-list mc-block" onclick="item_select('diamond', 'block')">diamond</a>
-        <a data-name="emerald" class="mc-list mc-block" onclick="item_select('emerald', 'block')">emerald</a>
-        <a data-name="lapis_lazuli" class="mc-list mc-block" onclick="item_select('lapis_lazuli', 'block')">lapis_lazuli</a>
-        <a data-name="quartz" class="mc-list mc-block" onclick="item_select('quartz', 'block')">quartz</a>
-        <a data-name="amethyst_shard" class="mc-list mc-block" onclick="item_select('amethyst_shard', 'block')">amethyst_shard</a>
-        <a data-name="raw_iron" class="mc-list mc-block" onclick="item_select('raw_iron', 'block')">raw_iron</a>
-        <a data-name="iron_ingot" class="mc-list mc-block" onclick="item_select('iron_ingot', 'block')">iron_ingot</a>
-        <a data-name="raw_copper" class="mc-list mc-block" onclick="item_select('raw_copper', 'block')">raw_copper</a>
-        <a data-name="copper_ingot" class="mc-list mc-block" onclick="item_select('copper_ingot', 'block')">copper_ingot</a>
-        <a data-name="raw_gold" class="mc-list mc-block" onclick="item_select('raw_gold', 'block')">raw_gold</a>
-        <a data-name="gold_ingot" class="mc-list mc-block" onclick="item_select('gold_ingot', 'block')">gold_ingot</a>
-        <a data-name="netherite_ingot" class="mc-list mc-block" onclick="item_select('netherite_ingot', 'block')">netherite_ingot</a>
-        <a data-name="netherite_scrap" class="mc-list mc-block" onclick="item_select('netherite_scrap', 'block')">netherite_scrap</a>
-        <a data-name="wooden_sword" class="mc-list mc-block" onclick="item_select('wooden_sword', 'block')">wooden_sword</a>
-        <a data-name="wooden_shovel" class="mc-list mc-block" onclick="item_select('wooden_shovel', 'block')">wooden_shovel</a>
-        <a data-name="wooden_pickaxe" class="mc-list mc-block" onclick="item_select('wooden_pickaxe', 'block')">wooden_pickaxe</a>
-        <a data-name="wooden_axe" class="mc-list mc-block" onclick="item_select('wooden_axe', 'block')">wooden_axe</a>
-        <a data-name="wooden_hoe" class="mc-list mc-block" onclick="item_select('wooden_hoe', 'block')">wooden_hoe</a>
-        <a data-name="stone_sword" class="mc-list mc-block" onclick="item_select('stone_sword', 'block')">stone_sword</a>
-        <a data-name="stone_shovel" class="mc-list mc-block" onclick="item_select('stone_shovel', 'block')">stone_shovel</a>
-        <a data-name="stone_pickaxe" class="mc-list mc-block" onclick="item_select('stone_pickaxe', 'block')">stone_pickaxe</a>
-        <a data-name="stone_axe" class="mc-list mc-block" onclick="item_select('stone_axe', 'block')">stone_axe</a>
-        <a data-name="stone_hoe" class="mc-list mc-block" onclick="item_select('stone_hoe', 'block')">stone_hoe</a>
-        <a data-name="golden_sword" class="mc-list mc-block" onclick="item_select('golden_sword', 'block')">golden_sword</a>
-        <a data-name="golden_shovel" class="mc-list mc-block" onclick="item_select('golden_shovel', 'block')">golden_shovel</a>
-        <a data-name="golden_pickaxe" class="mc-list mc-block" onclick="item_select('golden_pickaxe', 'block')">golden_pickaxe</a>
-        <a data-name="golden_axe" class="mc-list mc-block" onclick="item_select('golden_axe', 'block')">golden_axe</a>
-        <a data-name="golden_hoe" class="mc-list mc-block" onclick="item_select('golden_hoe', 'block')">golden_hoe</a>
-        <a data-name="iron_sword" class="mc-list mc-block" onclick="item_select('iron_sword', 'block')">iron_sword</a>
-        <a data-name="iron_shovel" class="mc-list mc-block" onclick="item_select('iron_shovel', 'block')">iron_shovel</a>
-        <a data-name="iron_pickaxe" class="mc-list mc-block" onclick="item_select('iron_pickaxe', 'block')">iron_pickaxe</a>
-        <a data-name="iron_axe" class="mc-list mc-block" onclick="item_select('iron_axe', 'block')">iron_axe</a>
-        <a data-name="iron_hoe" class="mc-list mc-block" onclick="item_select('iron_hoe', 'block')">iron_hoe</a>
-        <a data-name="diamond_sword" class="mc-list mc-block" onclick="item_select('diamond_sword', 'block')">diamond_sword</a>
-        <a data-name="diamond_shovel" class="mc-list mc-block" onclick="item_select('diamond_shovel', 'block')">diamond_shovel</a>
-        <a data-name="diamond_pickaxe" class="mc-list mc-block" onclick="item_select('diamond_pickaxe', 'block')">diamond_pickaxe</a>
-        <a data-name="diamond_axe" class="mc-list mc-block" onclick="item_select('diamond_axe', 'block')">diamond_axe</a>
-        <a data-name="diamond_hoe" class="mc-list mc-block" onclick="item_select('diamond_hoe', 'block')">diamond_hoe</a>
-        <a data-name="netherite_sword" class="mc-list mc-block" onclick="item_select('netherite_sword', 'block')">netherite_sword</a>
-        <a data-name="netherite_shovel" class="mc-list mc-block" onclick="item_select('netherite_shovel', 'block')">netherite_shovel</a>
-        <a data-name="netherite_pickaxe" class="mc-list mc-block" onclick="item_select('netherite_pickaxe', 'block')">netherite_pickaxe</a>
-        <a data-name="netherite_axe" class="mc-list mc-block" onclick="item_select('netherite_axe', 'block')">netherite_axe</a>
-        <a data-name="netherite_hoe" class="mc-list mc-block" onclick="item_select('netherite_hoe', 'block')">netherite_hoe</a>
-        <a data-name="stick" class="mc-list mc-block" onclick="item_select('stick', 'block')">stick</a>
-        <a data-name="bowl" class="mc-list mc-block" onclick="item_select('bowl', 'block')">bowl</a>
-        <a data-name="mushroom_stew" class="mc-list mc-block" onclick="item_select('mushroom_stew', 'block')">mushroom_stew</a>
         <a data-name="string" class="mc-list mc-block" onclick="item_select('string', 'block')">string</a>
-        <a data-name="feather" class="mc-list mc-block" onclick="item_select('feather', 'block')">feather</a>
-        <a data-name="gunpowder" class="mc-list mc-block" onclick="item_select('gunpowder', 'block')">gunpowder</a>
         <a data-name="wheat_seeds" class="mc-list mc-block" onclick="item_select('wheat_seeds', 'block')">wheat_seeds</a>
-        <a data-name="wheat" class="mc-list mc-block" onclick="item_select('wheat', 'block')">wheat</a>
-        <a data-name="bread" class="mc-list mc-block" onclick="item_select('bread', 'block')">bread</a>
-        <a data-name="leather_helmet" class="mc-list mc-block" onclick="item_select('leather_helmet', 'block')">leather_helmet</a>
-        <a data-name="leather_chestplate" class="mc-list mc-block" onclick="item_select('leather_chestplate', 'block')">leather_chestplate</a>
-        <a data-name="leather_leggings" class="mc-list mc-block" onclick="item_select('leather_leggings', 'block')">leather_leggings</a>
-        <a data-name="leather_boots" class="mc-list mc-block" onclick="item_select('leather_boots', 'block')">leather_boots</a>
-        <a data-name="chainmail_helmet" class="mc-list mc-block" onclick="item_select('chainmail_helmet', 'block')">chainmail_helmet</a>
-        <a data-name="chainmail_chestplate" class="mc-list mc-block" onclick="item_select('chainmail_chestplate', 'block')">chainmail_chestplate</a>
-        <a data-name="chainmail_leggings" class="mc-list mc-block" onclick="item_select('chainmail_leggings', 'block')">chainmail_leggings</a>
-        <a data-name="chainmail_boots" class="mc-list mc-block" onclick="item_select('chainmail_boots', 'block')">chainmail_boots</a>
-        <a data-name="iron_helmet" class="mc-list mc-block" onclick="item_select('iron_helmet', 'block')">iron_helmet</a>
-        <a data-name="iron_chestplate" class="mc-list mc-block" onclick="item_select('iron_chestplate', 'block')">iron_chestplate</a>
-        <a data-name="iron_leggings" class="mc-list mc-block" onclick="item_select('iron_leggings', 'block')">iron_leggings</a>
-        <a data-name="iron_boots" class="mc-list mc-block" onclick="item_select('iron_boots', 'block')">iron_boots</a>
-        <a data-name="diamond_helmet" class="mc-list mc-block" onclick="item_select('diamond_helmet', 'block')">diamond_helmet</a>
-        <a data-name="diamond_chestplate" class="mc-list mc-block" onclick="item_select('diamond_chestplate', 'block')">diamond_chestplate</a>
-        <a data-name="diamond_leggings" class="mc-list mc-block" onclick="item_select('diamond_leggings', 'block')">diamond_leggings</a>
-        <a data-name="diamond_boots" class="mc-list mc-block" onclick="item_select('diamond_boots', 'block')">diamond_boots</a>
-        <a data-name="golden_helmet" class="mc-list mc-block" onclick="item_select('golden_helmet', 'block')">golden_helmet</a>
-        <a data-name="golden_chestplate" class="mc-list mc-block" onclick="item_select('golden_chestplate', 'block')">golden_chestplate</a>
-        <a data-name="golden_leggings" class="mc-list mc-block" onclick="item_select('golden_leggings', 'block')">golden_leggings</a>
-        <a data-name="golden_boots" class="mc-list mc-block" onclick="item_select('golden_boots', 'block')">golden_boots</a>
-        <a data-name="netherite_helmet" class="mc-list mc-block" onclick="item_select('netherite_helmet', 'block')">netherite_helmet</a>
-        <a data-name="netherite_chestplate" class="mc-list mc-block" onclick="item_select('netherite_chestplate', 'block')">netherite_chestplate</a>
-        <a data-name="netherite_leggings" class="mc-list mc-block" onclick="item_select('netherite_leggings', 'block')">netherite_leggings</a>
-        <a data-name="netherite_boots" class="mc-list mc-block" onclick="item_select('netherite_boots', 'block')">netherite_boots</a>
-        <a data-name="flint" class="mc-list mc-block" onclick="item_select('flint', 'block')">flint</a>
-        <a data-name="porkchop" class="mc-list mc-block" onclick="item_select('porkchop', 'block')">porkchop</a>
-        <a data-name="cooked_porkchop" class="mc-list mc-block" onclick="item_select('cooked_porkchop', 'block')">cooked_porkchop</a>
-        <a data-name="painting" class="mc-list mc-block" onclick="item_select('painting', 'block')">painting</a>
-        <a data-name="golden_apple" class="mc-list mc-block" onclick="item_select('golden_apple', 'block')">golden_apple</a>
-        <a data-name="enchanted_golden_apple" class="mc-list mc-block" onclick="item_select('enchanted_golden_apple', 'block')">enchanted_golden_apple</a>
         <a data-name="oak_sign" class="mc-list mc-block" onclick="item_select('oak_sign', 'block')">oak_sign</a>
         <a data-name="spruce_sign" class="mc-list mc-block" onclick="item_select('spruce_sign', 'block')">spruce_sign</a>
         <a data-name="birch_sign" class="mc-list mc-block" onclick="item_select('birch_sign', 'block')">birch_sign</a>
@@ -820,60 +707,7 @@
         <a data-name="mangrove_sign" class="mc-list mc-block" onclick="item_select('mangrove_sign', 'block')">mangrove_sign</a>
         <a data-name="crimson_sign" class="mc-list mc-block" onclick="item_select('crimson_sign', 'block')">crimson_sign</a>
         <a data-name="warped_sign" class="mc-list mc-block" onclick="item_select('warped_sign', 'block')">warped_sign</a>
-        <a data-name="bucket" class="mc-list mc-block" onclick="item_select('bucket', 'block')">bucket</a>
-        <a data-name="water_bucket" class="mc-list mc-block" onclick="item_select('water_bucket', 'block')">water_bucket</a>
-        <a data-name="lava_bucket" class="mc-list mc-block" onclick="item_select('lava_bucket', 'block')">lava_bucket</a>
-        <a data-name="powder_snow_bucket" class="mc-list mc-block" onclick="item_select('powder_snow_bucket', 'block')">powder_snow_bucket</a>
-        <a data-name="snowball" class="mc-list mc-block" onclick="item_select('snowball', 'block')">snowball</a>
-        <a data-name="leather" class="mc-list mc-block" onclick="item_select('leather', 'block')">leather</a>
-        <a data-name="milk_bucket" class="mc-list mc-block" onclick="item_select('milk_bucket', 'block')">milk_bucket</a>
-        <a data-name="pufferfish_bucket" class="mc-list mc-block" onclick="item_select('pufferfish_bucket', 'block')">pufferfish_bucket</a>
-        <a data-name="salmon_bucket" class="mc-list mc-block" onclick="item_select('salmon_bucket', 'block')">salmon_bucket</a>
-        <a data-name="cod_bucket" class="mc-list mc-block" onclick="item_select('cod_bucket', 'block')">cod_bucket</a>
-        <a data-name="tropical_fish_bucket" class="mc-list mc-block" onclick="item_select('tropical_fish_bucket', 'block')">tropical_fish_bucket</a>
-        <a data-name="axolotl_bucket" class="mc-list mc-block" onclick="item_select('axolotl_bucket', 'block')">axolotl_bucket</a>
-        <a data-name="tadpole_bucket" class="mc-list mc-block" onclick="item_select('tadpole_bucket', 'block')">tadpole_bucket</a>
-        <a data-name="brick" class="mc-list mc-block" onclick="item_select('brick', 'block')">brick</a>
-        <a data-name="clay_ball" class="mc-list mc-block" onclick="item_select('clay_ball', 'block')">clay_ball</a>
         <a data-name="dried_kelp_block" class="mc-list mc-block" onclick="item_select('dried_kelp_block', 'block')">dried_kelp_block</a>
-        <a data-name="paper" class="mc-list mc-block" onclick="item_select('paper', 'block')">paper</a>
-        <a data-name="book" class="mc-list mc-block" onclick="item_select('book', 'block')">book</a>
-        <a data-name="slime_ball" class="mc-list mc-block" onclick="item_select('slime_ball', 'block')">slime_ball</a>
-        <a data-name="egg" class="mc-list mc-block" onclick="item_select('egg', 'block')">egg</a>
-        <a data-name="compass" class="mc-list mc-block" onclick="item_select('compass', 'block')">compass</a>
-        <a data-name="recovery_compass" class="mc-list mc-block" onclick="item_select('recovery_compass', 'block')">recovery_compass</a>
-        <a data-name="fishing_rod" class="mc-list mc-block" onclick="item_select('fishing_rod', 'block')">fishing_rod</a>
-        <a data-name="clock" class="mc-list mc-block" onclick="item_select('clock', 'block')">clock</a>
-        <a data-name="spyglass" class="mc-list mc-block" onclick="item_select('spyglass', 'block')">spyglass</a>
-        <a data-name="glowstone_dust" class="mc-list mc-block" onclick="item_select('glowstone_dust', 'block')">glowstone_dust</a>
-        <a data-name="cod" class="mc-list mc-block" onclick="item_select('cod', 'block')">cod</a>
-        <a data-name="salmon" class="mc-list mc-block" onclick="item_select('salmon', 'block')">salmon</a>
-        <a data-name="tropical_fish" class="mc-list mc-block" onclick="item_select('tropical_fish', 'block')">tropical_fish</a>
-        <a data-name="pufferfish" class="mc-list mc-block" onclick="item_select('pufferfish', 'block')">pufferfish</a>
-        <a data-name="cooked_cod" class="mc-list mc-block" onclick="item_select('cooked_cod', 'block')">cooked_cod</a>
-        <a data-name="cooked_salmon" class="mc-list mc-block" onclick="item_select('cooked_salmon', 'block')">cooked_salmon</a>
-        <a data-name="ink_sac" class="mc-list mc-block" onclick="item_select('ink_sac', 'block')">ink_sac</a>
-        <a data-name="glow_ink_sac" class="mc-list mc-block" onclick="item_select('glow_ink_sac', 'block')">glow_ink_sac</a>
-        <a data-name="cocoa_beans" class="mc-list mc-block" onclick="item_select('cocoa_beans', 'block')">cocoa_beans</a>
-        <a data-name="white_dye" class="mc-list mc-block" onclick="item_select('white_dye', 'block')">white_dye</a>
-        <a data-name="orange_dye" class="mc-list mc-block" onclick="item_select('orange_dye', 'block')">orange_dye</a>
-        <a data-name="magenta_dye" class="mc-list mc-block" onclick="item_select('magenta_dye', 'block')">magenta_dye</a>
-        <a data-name="light_blue_dye" class="mc-list mc-block" onclick="item_select('light_blue_dye', 'block')">light_blue_dye</a>
-        <a data-name="yellow_dye" class="mc-list mc-block" onclick="item_select('yellow_dye', 'block')">yellow_dye</a>
-        <a data-name="lime_dye" class="mc-list mc-block" onclick="item_select('lime_dye', 'block')">lime_dye</a>
-        <a data-name="pink_dye" class="mc-list mc-block" onclick="item_select('pink_dye', 'block')">pink_dye</a>
-        <a data-name="gray_dye" class="mc-list mc-block" onclick="item_select('gray_dye', 'block')">gray_dye</a>
-        <a data-name="light_gray_dye" class="mc-list mc-block" onclick="item_select('light_gray_dye', 'block')">light_gray_dye</a>
-        <a data-name="cyan_dye" class="mc-list mc-block" onclick="item_select('cyan_dye', 'block')">cyan_dye</a>
-        <a data-name="purple_dye" class="mc-list mc-block" onclick="item_select('purple_dye', 'block')">purple_dye</a>
-        <a data-name="blue_dye" class="mc-list mc-block" onclick="item_select('blue_dye', 'block')">blue_dye</a>
-        <a data-name="brown_dye" class="mc-list mc-block" onclick="item_select('brown_dye', 'block')">brown_dye</a>
-        <a data-name="green_dye" class="mc-list mc-block" onclick="item_select('green_dye', 'block')">green_dye</a>
-        <a data-name="red_dye" class="mc-list mc-block" onclick="item_select('red_dye', 'block')">red_dye</a>
-        <a data-name="black_dye" class="mc-list mc-block" onclick="item_select('black_dye', 'block')">black_dye</a>
-        <a data-name="bone_meal" class="mc-list mc-block" onclick="item_select('bone_meal', 'block')">bone_meal</a>
-        <a data-name="bone" class="mc-list mc-block" onclick="item_select('bone', 'block')">bone</a>
-        <a data-name="sugar" class="mc-list mc-block" onclick="item_select('sugar', 'block')">sugar</a>
         <a data-name="cake" class="mc-list mc-block" onclick="item_select('cake', 'block')">cake</a>
         <a data-name="white_bed" class="mc-list mc-block" onclick="item_select('white_bed', 'block')">white_bed</a>
         <a data-name="orange_bed" class="mc-list mc-block" onclick="item_select('orange_bed', 'block')">orange_bed</a>
@@ -891,73 +725,18 @@
         <a data-name="green_bed" class="mc-list mc-block" onclick="item_select('green_bed', 'block')">green_bed</a>
         <a data-name="red_bed" class="mc-list mc-block" onclick="item_select('red_bed', 'block')">red_bed</a>
         <a data-name="black_bed" class="mc-list mc-block" onclick="item_select('black_bed', 'block')">black_bed</a>
-        <a data-name="cookie" class="mc-list mc-block" onclick="item_select('cookie', 'block')">cookie</a>
-        <a data-name="filled_map" class="mc-list mc-block" onclick="item_select('filled_map', 'block')">filled_map</a>
-        <a data-name="shears" class="mc-list mc-block" onclick="item_select('shears', 'block')">shears</a>
-        <a data-name="melon_slice" class="mc-list mc-block" onclick="item_select('melon_slice', 'block')">melon_slice</a>
-        <a data-name="dried_kelp" class="mc-list mc-block" onclick="item_select('dried_kelp', 'block')">dried_kelp</a>
-        <a data-name="pumpkin_seeds" class="mc-list mc-block" onclick="item_select('pumpkin_seeds', 'block')">pumpkin_seeds</a>
-        <a data-name="melon_seeds" class="mc-list mc-block" onclick="item_select('melon_seeds', 'block')">melon_seeds</a>
-        <a data-name="beef" class="mc-list mc-block" onclick="item_select('beef', 'block')">beef</a>
-        <a data-name="cooked_beef" class="mc-list mc-block" onclick="item_select('cooked_beef', 'block')">cooked_beef</a>
-        <a data-name="chicken" class="mc-list mc-block" onclick="item_select('chicken', 'block')">chicken</a>
-        <a data-name="cooked_chicken" class="mc-list mc-block" onclick="item_select('cooked_chicken', 'block')">cooked_chicken</a>
-        <a data-name="rotten_flesh" class="mc-list mc-block" onclick="item_select('rotten_flesh', 'block')">rotten_flesh</a>
-        <a data-name="ender_pearl" class="mc-list mc-block" onclick="item_select('ender_pearl', 'block')">ender_pearl</a>
-        <a data-name="blaze_rod" class="mc-list mc-block" onclick="item_select('blaze_rod', 'block')">blaze_rod</a>
-        <a data-name="ghast_tear" class="mc-list mc-block" onclick="item_select('ghast_tear', 'block')">ghast_tear</a>
-        <a data-name="gold_nugget" class="mc-list mc-block" onclick="item_select('gold_nugget', 'block')">gold_nugget</a>
         <a data-name="nether_wart" class="mc-list mc-block" onclick="item_select('nether_wart', 'block')">nether_wart</a>
-        <a data-name="potion" class="mc-list mc-block" onclick="item_select('potion', 'block')">potion</a>
-        <a data-name="glass_bottle" class="mc-list mc-block" onclick="item_select('glass_bottle', 'block')">glass_bottle</a>
-        <a data-name="spider_eye" class="mc-list mc-block" onclick="item_select('spider_eye', 'block')">spider_eye</a>
-        <a data-name="fermented_spider_eye" class="mc-list mc-block" onclick="item_select('fermented_spider_eye', 'block')">fermented_spider_eye</a>
-        <a data-name="blaze_powder" class="mc-list mc-block" onclick="item_select('blaze_powder', 'block')">blaze_powder</a>
-        <a data-name="magma_cream" class="mc-list mc-block" onclick="item_select('magma_cream', 'block')">magma_cream</a>
         <a data-name="brewing_stand" class="mc-list mc-block" onclick="item_select('brewing_stand', 'block')">brewing_stand</a>
         <a data-name="cauldron" class="mc-list mc-block" onclick="item_select('cauldron', 'block')">cauldron</a>
-        <a data-name="ender_eye" class="mc-list mc-block" onclick="item_select('ender_eye', 'block')">ender_eye</a>
-        <a data-name="glistering_melon_slice" class="mc-list mc-block" onclick="item_select('glistering_melon_slice', 'block')">glistering_melon_slice</a>
-        <a data-name="experience_bottle" class="mc-list mc-block" onclick="item_select('experience_bottle', 'block')">experience_bottle</a>
-        <a data-name="fire_charge" class="mc-list mc-block" onclick="item_select('fire_charge', 'block')">fire_charge</a>
-        <a data-name="writable_book" class="mc-list mc-block" onclick="item_select('writable_book', 'block')">writable_book</a>
-        <a data-name="written_book" class="mc-list mc-block" onclick="item_select('written_book', 'block')">written_book</a>
-        <a data-name="item_frame" class="mc-list mc-block" onclick="item_select('item_frame', 'block')">item_frame</a>
-        <a data-name="glow_item_frame" class="mc-list mc-block" onclick="item_select('glow_item_frame', 'block')">glow_item_frame</a>
         <a data-name="flower_pot" class="mc-list mc-block" onclick="item_select('flower_pot', 'block')">flower_pot</a>
-        <a data-name="carrot" class="mc-list mc-block" onclick="item_select('carrot', 'block')">carrot</a>
-        <a data-name="potato" class="mc-list mc-block" onclick="item_select('potato', 'block')">potato</a>
-        <a data-name="baked_potato" class="mc-list mc-block" onclick="item_select('baked_potato', 'block')">baked_potato</a>
-        <a data-name="poisonous_potato" class="mc-list mc-block" onclick="item_select('poisonous_potato', 'block')">poisonous_potato</a>
-        <a data-name="map" class="mc-list mc-block" onclick="item_select('map', 'block')">map</a>
-        <a data-name="golden_carrot" class="mc-list mc-block" onclick="item_select('golden_carrot', 'block')">golden_carrot</a>
+        <a data-name="carrots" class="mc-list mc-block" onclick="item_select('carrots', 'block')">carrots</a>
+        <a data-name="potatoes" class="mc-list mc-block" onclick="item_select('potatoes', 'block')">potatoes</a>
         <a data-name="skeleton_skull" class="mc-list mc-block" onclick="item_select('skeleton_skull', 'block')">skeleton_skull</a>
         <a data-name="wither_skeleton_skull" class="mc-list mc-block" onclick="item_select('wither_skeleton_skull', 'block')">wither_skeleton_skull</a>
         <a data-name="zombie_head" class="mc-list mc-block" onclick="item_select('zombie_head', 'block')">zombie_head</a>
         <a data-name="creeper_head" class="mc-list mc-block" onclick="item_select('creeper_head', 'block')">creeper_head</a>
         <a data-name="dragon_head" class="mc-list mc-block" onclick="item_select('dragon_head', 'block')">dragon_head</a>
-        <a data-name="nether_star" class="mc-list mc-block" onclick="item_select('nether_star', 'block')">nether_star</a>
-        <a data-name="pumpkin_pie" class="mc-list mc-block" onclick="item_select('pumpkin_pie', 'block')">pumpkin_pie</a>
-        <a data-name="firework_rocket" class="mc-list mc-block" onclick="item_select('firework_rocket', 'block')">firework_rocket</a>
-        <a data-name="firework_star" class="mc-list mc-block" onclick="item_select('firework_star', 'block')">firework_star</a>
-        <a data-name="enchanted_book" class="mc-list mc-block" onclick="item_select('enchanted_book', 'block')">enchanted_book</a>
         <a data-name="nether_brick" class="mc-list mc-block" onclick="item_select('nether_brick', 'block')">nether_brick</a>
-        <a data-name="prismarine_shard" class="mc-list mc-block" onclick="item_select('prismarine_shard', 'block')">prismarine_shard</a>
-        <a data-name="prismarine_crystals" class="mc-list mc-block" onclick="item_select('prismarine_crystals', 'block')">prismarine_crystals</a>
-        <a data-name="rabbit" class="mc-list mc-block" onclick="item_select('rabbit', 'block')">rabbit</a>
-        <a data-name="cooked_rabbit" class="mc-list mc-block" onclick="item_select('cooked_rabbit', 'block')">cooked_rabbit</a>
-        <a data-name="rabbit_stew" class="mc-list mc-block" onclick="item_select('rabbit_stew', 'block')">rabbit_stew</a>
-        <a data-name="rabbit_foot" class="mc-list mc-block" onclick="item_select('rabbit_foot', 'block')">rabbit_foot</a>
-        <a data-name="rabbit_hide" class="mc-list mc-block" onclick="item_select('rabbit_hide', 'block')">rabbit_hide</a>
-        <a data-name="armor_stand" class="mc-list mc-block" onclick="item_select('armor_stand', 'block')">armor_stand</a>
-        <a data-name="iron_horse_armor" class="mc-list mc-block" onclick="item_select('iron_horse_armor', 'block')">iron_horse_armor</a>
-        <a data-name="golden_horse_armor" class="mc-list mc-block" onclick="item_select('golden_horse_armor', 'block')">golden_horse_armor</a>
-        <a data-name="diamond_horse_armor" class="mc-list mc-block" onclick="item_select('diamond_horse_armor', 'block')">diamond_horse_armor</a>
-        <a data-name="leather_horse_armor" class="mc-list mc-block" onclick="item_select('leather_horse_armor', 'block')">leather_horse_armor</a>
-        <a data-name="lead" class="mc-list mc-block" onclick="item_select('lead', 'block')">lead</a>
-        <a data-name="name_tag" class="mc-list mc-block" onclick="item_select('name_tag', 'block')">name_tag</a>
-        <a data-name="mutton" class="mc-list mc-block" onclick="item_select('mutton', 'block')">mutton</a>
-        <a data-name="cooked_mutton" class="mc-list mc-block" onclick="item_select('cooked_mutton', 'block')">cooked_mutton</a>
         <a data-name="white_banner" class="mc-list mc-block" onclick="item_select('white_banner', 'block')">white_banner</a>
         <a data-name="orange_banner" class="mc-list mc-block" onclick="item_select('orange_banner', 'block')">orange_banner</a>
         <a data-name="magenta_banner" class="mc-list mc-block" onclick="item_select('magenta_banner', 'block')">magenta_banner</a>
@@ -974,43 +753,7 @@
         <a data-name="green_banner" class="mc-list mc-block" onclick="item_select('green_banner', 'block')">green_banner</a>
         <a data-name="red_banner" class="mc-list mc-block" onclick="item_select('red_banner', 'block')">red_banner</a>
         <a data-name="black_banner" class="mc-list mc-block" onclick="item_select('black_banner', 'block')">black_banner</a>
-        <a data-name="end_crystal" class="mc-list mc-block" onclick="item_select('end_crystal', 'block')">end_crystal</a>
-        <a data-name="chorus_fruit" class="mc-list mc-block" onclick="item_select('chorus_fruit', 'block')">chorus_fruit</a>
-        <a data-name="popped_chorus_fruit" class="mc-list mc-block" onclick="item_select('popped_chorus_fruit', 'block')">popped_chorus_fruit</a>
-        <a data-name="beetroot" class="mc-list mc-block" onclick="item_select('beetroot', 'block')">beetroot</a>
-        <a data-name="beetroot_seeds" class="mc-list mc-block" onclick="item_select('beetroot_seeds', 'block')">beetroot_seeds</a>
-        <a data-name="beetroot_soup" class="mc-list mc-block" onclick="item_select('beetroot_soup', 'block')">beetroot_soup</a>
-        <a data-name="dragon_breath" class="mc-list mc-block" onclick="item_select('dragon_breath', 'block')">dragon_breath</a>
-        <a data-name="splash_potion" class="mc-list mc-block" onclick="item_select('splash_potion', 'block')">splash_potion</a>
-        <a data-name="spectral_arrow" class="mc-list mc-block" onclick="item_select('spectral_arrow', 'block')">spectral_arrow</a>
-        <a data-name="tipped_arrow" class="mc-list mc-block" onclick="item_select('tipped_arrow', 'block')">tipped_arrow</a>
-        <a data-name="lingering_potion" class="mc-list mc-block" onclick="item_select('lingering_potion', 'block')">lingering_potion</a>
-        <a data-name="shield" class="mc-list mc-block" onclick="item_select('shield', 'block')">shield</a>
-        <a data-name="totem_of_undying" class="mc-list mc-block" onclick="item_select('totem_of_undying', 'block')">totem_of_undying</a>
-        <a data-name="shulker_shell" class="mc-list mc-block" onclick="item_select('shulker_shell', 'block')">shulker_shell</a>
-        <a data-name="iron_nugget" class="mc-list mc-block" onclick="item_select('iron_nugget', 'block')">iron_nugget</a>
-        <a data-name="music_disc_13" class="mc-list mc-block" onclick="item_select('music_disc_13', 'block')">music_disc_13</a>
-        <a data-name="music_disc_cat" class="mc-list mc-block" onclick="item_select('music_disc_cat', 'block')">music_disc_cat</a>
-        <a data-name="music_disc_blocks" class="mc-list mc-block" onclick="item_select('music_disc_blocks', 'block')">music_disc_blocks</a>
-        <a data-name="music_disc_chirp" class="mc-list mc-block" onclick="item_select('music_disc_chirp', 'block')">music_disc_chirp</a>
-        <a data-name="music_disc_far" class="mc-list mc-block" onclick="item_select('music_disc_far', 'block')">music_disc_far</a>
-        <a data-name="music_disc_mall" class="mc-list mc-block" onclick="item_select('music_disc_mall', 'block')">music_disc_mall</a>
-        <a data-name="music_disc_mellohi" class="mc-list mc-block" onclick="item_select('music_disc_mellohi', 'block')">music_disc_mellohi</a>
-        <a data-name="music_disc_stal" class="mc-list mc-block" onclick="item_select('music_disc_stal', 'block')">music_disc_stal</a>
-        <a data-name="music_disc_strad" class="mc-list mc-block" onclick="item_select('music_disc_strad', 'block')">music_disc_strad</a>
-        <a data-name="music_disc_ward" class="mc-list mc-block" onclick="item_select('music_disc_ward', 'block')">music_disc_ward</a>
-        <a data-name="music_disc_11" class="mc-list mc-block" onclick="item_select('music_disc_11', 'block')">music_disc_11</a>
-        <a data-name="music_disc_wait" class="mc-list mc-block" onclick="item_select('music_disc_wait', 'block')">music_disc_wait</a>
-        <a data-name="music_disc_otherside" class="mc-list mc-block" onclick="item_select('music_disc_otherside', 'block')">music_disc_otherside</a>
-        <a data-name="music_disc_5" class="mc-list mc-block" onclick="item_select('music_disc_5', 'block')">music_disc_5</a>
-        <a data-name="music_disc_pigstep" class="mc-list mc-block" onclick="item_select('music_disc_pigstep', 'block')">music_disc_pigstep</a>
-        <a data-name="disc_fragment_5" class="mc-list mc-block" onclick="item_select('disc_fragment_5', 'block')">disc_fragment_5</a>
-        <a data-name="trident" class="mc-list mc-block" onclick="item_select('trident', 'block')">trident</a>
-        <a data-name="phantom_membrane" class="mc-list mc-block" onclick="item_select('phantom_membrane', 'block')">phantom_membrane</a>
-        <a data-name="nautilus_shell" class="mc-list mc-block" onclick="item_select('nautilus_shell', 'block')">nautilus_shell</a>
-        <a data-name="heart_of_the_sea" class="mc-list mc-block" onclick="item_select('heart_of_the_sea', 'block')">heart_of_the_sea</a>
-        <a data-name="crossbow" class="mc-list mc-block" onclick="item_select('crossbow', 'block')">crossbow</a>
-        <a data-name="suspicious_stew" class="mc-list mc-block" onclick="item_select('suspicious_stew', 'block')">suspicious_stew</a>
+        <a data-name="beetroots" class="mc-list mc-block" onclick="item_select('beetroots', 'block')">beetroots</a>
         <a data-name="loom" class="mc-list mc-block" onclick="item_select('loom', 'block')">loom</a>
         <a data-name="flower_banner_pattern" class="mc-list mc-block" onclick="item_select('flower_banner_pattern', 'block')">flower_banner_pattern</a>
         <a data-name="creeper_banner_pattern" class="mc-list mc-block" onclick="item_select('creeper_banner_pattern', 'block')">creeper_banner_pattern</a>
@@ -1018,7 +761,6 @@
         <a data-name="mojang_banner_pattern" class="mc-list mc-block" onclick="item_select('mojang_banner_pattern', 'block')">mojang_banner_pattern</a>
         <a data-name="globe_banner_pattern" class="mc-list mc-block" onclick="item_select('globe_banner_pattern', 'block')">globe_banner_pattern</a>
         <a data-name="piglin_banner_pattern" class="mc-list mc-block" onclick="item_select('piglin_banner_pattern', 'block')">piglin_banner_pattern</a>
-        <a data-name="goat_horn" class="mc-list mc-block" onclick="item_select('goat_horn', 'block')">goat_horn</a>
         <a data-name="composter" class="mc-list mc-block" onclick="item_select('composter', 'block')">composter</a>
         <a data-name="barrel" class="mc-list mc-block" onclick="item_select('barrel', 'block')">barrel</a>
         <a data-name="smoker" class="mc-list mc-block" onclick="item_select('smoker', 'block')">smoker</a>
@@ -1031,15 +773,13 @@
         <a data-name="bell" class="mc-list mc-block" onclick="item_select('bell', 'block')">bell</a>
         <a data-name="lantern" class="mc-list mc-block" onclick="item_select('lantern', 'block')">lantern</a>
         <a data-name="soul_lantern" class="mc-list mc-block" onclick="item_select('soul_lantern', 'block')">soul_lantern</a>
-        <a data-name="sweet_berries" class="mc-list mc-block" onclick="item_select('sweet_berries', 'block')">sweet_berries</a>
-        <a data-name="glow_berries" class="mc-list mc-block" onclick="item_select('glow_berries', 'block')">glow_berries</a>
+        <a data-name="sweet_berry_bush" class="mc-list mc-block" onclick="item_select('sweet_berry_bush', 'block')">sweet_berry_bush</a>
+        <a data-name="cave_vines_plant" class="mc-list mc-block" onclick="item_select('cave_vines_plant', 'block')">cave_vines_plant</a>
         <a data-name="campfire" class="mc-list mc-block" onclick="item_select('campfire', 'block')">campfire</a>
         <a data-name="soul_campfire" class="mc-list mc-block" onclick="item_select('soul_campfire', 'block')">soul_campfire</a>
         <a data-name="shroomlight" class="mc-list mc-block" onclick="item_select('shroomlight', 'block')">shroomlight</a>
-        <a data-name="honeycomb" class="mc-list mc-block" onclick="item_select('honeycomb', 'block')">honeycomb</a>
         <a data-name="bee_nest" class="mc-list mc-block" onclick="item_select('bee_nest', 'block')">bee_nest</a>
         <a data-name="beehive" class="mc-list mc-block" onclick="item_select('beehive', 'block')">beehive</a>
-        <a data-name="honey_bottle" class="mc-list mc-block" onclick="item_select('honey_bottle', 'block')">honey_bottle</a>
         <a data-name="honeycomb_block" class="mc-list mc-block" onclick="item_select('honeycomb_block', 'block')">honeycomb_block</a>
         <a data-name="lodestone" class="mc-list mc-block" onclick="item_select('lodestone', 'block')">lodestone</a>
         <a data-name="crying_obsidian" class="mc-list mc-block" onclick="item_select('crying_obsidian', 'block')">crying_obsidian</a>
@@ -1081,7 +821,9 @@
         <a data-name="ochre_froglight" class="mc-list mc-block" onclick="item_select('ochre_froglight', 'block')">ochre_froglight</a>
         <a data-name="verdant_froglight" class="mc-list mc-block" onclick="item_select('verdant_froglight', 'block')">verdant_froglight</a>
         <a data-name="pearlescent_froglight" class="mc-list mc-block" onclick="item_select('pearlescent_froglight', 'block')">pearlescent_froglight</a>
+
         <!-- SUMMONS -->
+
         <a data-name="allay" class="mc-list mc-summon" onclick="item_select('allay', 'summon')">allay</a>
         <a data-name=" area_effect_cloud" class="mc-list mc-summon" onclick="item_select(' area_effect_cloud', 'summon')"> area_effect_cloud</a>
         <a data-name=" armor_stand" class="mc-list mc-summon" onclick="item_select(' armor_stand', 'summon')"> armor_stand</a>
@@ -1210,6 +952,10 @@
         <div id="input">
           <textarea id="input_code" rows="1"></textarea>
           <button id="input_button" onclick="submitInput()">Submit</button>
+
+          <a style="color: crimson; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="genCode()">GENERATE</a>
+          <a style="color: limegreen; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="saveCode()">SAVE</a>
+          <a style="color: royalblue; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="loadCode()">LOAD</a>
         </div>
         <input type="text" id="score_name" value=".number" placeholder="score_name" />
         <input type="text" id="score_objective" value="data_skyblock" placeholder="score_objective" />

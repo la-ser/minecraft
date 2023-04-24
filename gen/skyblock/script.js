@@ -282,15 +282,19 @@ function generateTableData() {
     for (let j = 0; j < cells.length; j++) {
       const input = cells[j].querySelector("input,select");
       if (input) {
-        rowOutput += input.value + ",";
+        if (input.nodeName === "SELECT") {
+          rowOutput += input.value.charAt(0).toUpperCase() + input.value.slice(1) + ",";
+        } else {
+          rowOutput += input.value + ",";
+        }
       }
     }
 
     output += rowOutput.slice(0, -1) + "\n";
   }
 
-  // return output;
-  outputText.innerHTML = output;
+  return output;
+  // outputText.innerHTML = output;
 }
 
 function loadTableData(data) {
@@ -316,7 +320,7 @@ function loadTableData(data) {
         inputType = "number";
       } else if (j === 3) {
         const select = document.createElement("select");
-        const options = ["block", "summon", "other"];
+        const options = ["Block", "Summon", "Other"];
         for (let k = 0; k < options.length; k++) {
           const option = document.createElement("option");
           option.value = options[k];
@@ -324,7 +328,11 @@ function loadTableData(data) {
           select.appendChild(option);
         }
         cell.appendChild(select);
-        select.selectedIndex = options.indexOf(cells[j]);
+
+        if (cells[j]) {
+          select.selectedIndex = options.indexOf(cells[j].charAt(0).toUpperCase() + cells[j].slice(1));
+        }
+
         continue;
       }
 
@@ -342,4 +350,54 @@ function loadTableData(data) {
     });
     cell.appendChild(button);
   }
+}
+
+//cookies
+
+function genCode() {
+  outputText.innerHTML = generateTableData();
+}
+
+function saveCode() {
+  const outputCode = generateTableData();
+  setCookie("codeSave", encodeCookieValue(outputCode));
+}
+
+function loadCode() {
+  const codeSave = decodeCookieValue(getCookie("codeSave"));
+  loadTableData(codeSave);
+}
+
+function setCookie(name, value) {
+  document.cookie = name + "=" + value + ";path=/";
+}
+
+function getCookie(name) {
+  const cookieName = name + "=";
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const cookieArray = decodedCookie.split(";");
+
+  for (let i = 0; i < cookieArray.length; i++) {
+    let cookie = cookieArray[i];
+    while (cookie.charAt(0) === " ") {
+      cookie = cookie.substring(1);
+    }
+    if (cookie.indexOf(cookieName) === 0) {
+      return cookie.substring(cookieName.length, cookie.length);
+    }
+  }
+
+  return "";
+}
+
+function deleteCookie(name) {
+  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
+//encode / decode
+function encodeCookieValue(value) {
+  return encodeURIComponent(value);
+}
+function decodeCookieValue(value) {
+  return decodeURIComponent(value);
 }

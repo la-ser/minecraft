@@ -48,7 +48,6 @@ div#rows {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: fit-content;
 }
 
 #output {
@@ -63,45 +62,19 @@ div#rows {
   box-sizing: border-box;
 }
 
-td input,
-td button,
-td select,
-td option,
-#add-row,
-#generate {
-  background-color: var(--color1);
-  border: none;
-  color: white;
-  text-align: center;
-  border-radius: 0px;
-  padding: 5px 0px;
-  margin: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  outline: 0.5px solid gray;
-  width: 150px;
-}
-
-td input:hover,
-td button:hover,
-td select:hover,
-td option:hover,
-#add-row:hover,
-#generate:hover {
-  background-color: rgb(20, 20, 20, 1);
-}
-
+input,
 button,
-input {
+select,
+option {
   background-color: var(--color1);
   border: none;
   color: white;
   text-align: center;
   border-radius: 0px;
-  padding: 5px 0px;
-  margin: 5px;
+}
+
+input[type="number"] {
+  width: 100%;
 }
 
 button:hover {
@@ -164,10 +137,6 @@ a#back {
 }
 
 /* new */
-
-#searchButton {
-  float: right;
-}
 
 div#searchbox {
   height: 100vh;
