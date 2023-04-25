@@ -380,6 +380,7 @@ function loadTableData(data) {
 //cookies
 
 function genCode() {
+  clearTable();
   outputText.innerHTML = generateTableData();
 }
 
@@ -446,13 +447,97 @@ template_select.onchange = function () {
 
   if (selectedOption === "overworld") {
     clearTable();
-    loadTableData(``);
+    let overworld_data = `1,200,dirt,Block
+    201,300,cobblestone,Block
+    301,315,granite,Block
+    316,330,diorite,Block
+    331,345,andesite,Block
+    346,348,calcite,Block
+    349,350,amethyst_block,Block
+    351,430,oak_planks,Block
+    431,470,oak_wood,Block
+    471,525,coal_ore,Block
+    526,550,iron_ore,Block
+    551,575,sand,Block
+    576,600,gravel,Block
+    601,605,grass_block,Block
+    606,610,gold_ore,Block
+    611,625,water,Block
+    626,630,lava,Block
+    631,690,zombie,Summon
+    691,745,skeleton,Summon
+    746,750,cake,Block
+    751,760,enderman,Summon
+    761,775,creeper,Summon
+    776,795,witch,Summon
+    796,800,vindicator,Summon
+    801,810,sheep,Summon
+    811,820,cow,Summon
+    821,830,chicken,Summon
+    831,840,pig,Summon
+    841,841,horse,Summon
+    842,842,villager,Summon
+    843,843,wolf,Summon
+    844,844,donkey,Summon
+    845,845,diamond_ore,Block
+    846,847,fill ~ ~1 ~ ~ ~1 ~ sugar_cane destroy,Other
+    848,849,fill ~ ~1 ~ ~ ~1 ~ cactus destroy,Other
+    850,853,execute as @a at @s run playsound minecraft:entity.evoker.prepare_wololo master @a ~ ~ ~ 1 2,Other
+    850,853,execute as @a at @s run tellraw @s {"text":"<Markus> Watch out!"},Other
+    850,853,execute as @a at @s run fill ~1 ~120 ~1 ~-1 ~120 ~-1 pointed_dripstone[vertical_direction=down],Other
+    854,855,execute as @a at @s run summon phantom ~ ~25 ~,Other
+    855,865,farmland,Block
+    855,865,fill ~ ~1 ~ ~ ~1 ~ wheat destroy,Other
+    `;
+
+    let result = overworld_data.replace(/^\s+/gm, "");
+
+    loadTableData(result);
+    score_name.value = ".number";
   } else if (selectedOption === "the_nether") {
-    // Run function for option 2
-    console.log("Function for option 2 was called");
+    clearTable();
+    let nether_data = `1,200,netherrack,Block
+    201,225,crimson_nylium,Block
+    226,250,warped_nylium,Block
+    251,300,magma_block,Block
+    301,375,blackstone,Block
+    376,450,basalt,Block
+    451,490,nether_quartz_ore,Block
+    491,500,nether_gold_ore,Block
+    501,520,bone_block,Block
+    521,550,soul_soil,Block
+    551,570,soul_sand,Block
+    571,590,shroomlight,Block
+    591,595,crying_obsidian,Block
+    596,600,gravel,Block
+    601,625,warped_hyphae,Block
+    626,650,crimson_hyphae,Block
+    651,700,lava,Block
+    701,715,crimson_fungus,Block
+    716,730,warped_fungus,Block
+    731,750,glowstone,Block
+    751,780,summon piglin ~ ~1 ~,Summon
+    781,800,summon enderman ~ ~1 ~,Summon
+    801,850,summon zombified_piglin ~ ~1 ~,Summon
+    851,875,summon wither_skeleton ~ ~1 ~,Summon
+    876,900,summon magma_cube ~ ~1 ~,Summon
+    901,950,summon skeleton ~ ~1 ~,Summon
+    951,970,fill ~ ~1 ~ ~ ~1 ~ candle destroy,Other
+    971,990,fill ~ ~1 ~ ~ ~1 ~ fire destroy,Other
+    991,992,summon tnt ~ ~1 ~ {Fuse: 140},Other
+    993,999,summon blaze ~ ~1 ~,Summon
+    1000,1000,ancient_debris,Block
+    `;
+
+    let result = nether_data.replace(/^\s+/gm, "");
+
+    loadTableData(result);
+    score_name.value = ".number_nether";
+
+    template_select.value = "none";
   } else return;
 };
 
 function clearTable() {
-  table.innerHTML = "";
+  console.log(">\n> Clear Table Coming Soon!\n>");
 }
