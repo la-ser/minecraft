@@ -149,6 +149,14 @@ function addRow(iText, iType) {
       });
     } else return console.log("error.type.not.found");
   }
+
+  // const row2 = document.querySelectorAll("tbody tr");
+
+  // for (let i = 0; i < row2.length; i++) {
+  //   if (i % 2 === 1) {
+  //     row2[i].style.backgroundColor = "gray";
+  //   }
+  // }
 }
 
 generateBtn.addEventListener("click", generateOutput);
