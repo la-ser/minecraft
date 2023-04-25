@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Technofont;
+  src: url("./src/Technofont.ttf");
+}
+
 :root {
   --color1: rgb(31, 31, 31);
   --color2: rgba(128, 128, 128, 0.2);
@@ -23,6 +28,8 @@
 
 * {
   outline: none;
+  font-family: Technofont;
+  font-weight: bold;
 }
 
 body,
@@ -53,7 +60,7 @@ div#rows {
 
 #output {
   width: 100%;
-  font-size: 160%;
+  font-size: 120%;
   background-color: var(--color2);
   color: white;
   border: none;
@@ -156,17 +163,45 @@ button.disabled {
   cursor: not-allowed;
 }
 
+div#header {
+  display: flex;
+  align-items: center;
+}
+
 a#back {
   color: white;
   text-decoration: none;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin: 10px;
 }
 
 /* new */
 
 #searchButton {
-  float: right;
+  position: absolute;
+  right: 10px;
+  padding: 7px 15px;
+}
+
+#searchbar_top {
+  display: flex;
+  align-items: center;
+}
+
+#searchbar_top a {
+  width: 10%;
+  background-color: rgb(50, 50, 50, 1);
+  height: 20px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 5px;
+  /* border-radius: 5px; */
+  cursor: pointer;
+}
+
+#searchbar_top a:hover {
+  background-color: rgb(60, 60, 60, 1);
 }
 
 div#searchbox {
@@ -318,4 +353,5 @@ div#alertBox {
   align-items: center;
   justify-content: center;
   display: flex;
+  pointer-events: none;
 }

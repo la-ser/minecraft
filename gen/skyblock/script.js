@@ -1,9 +1,3 @@
-const showSearch = document.getElementById("searchbox");
-
-function toggleSearch() {
-  showSearch.classList.toggle("hidden");
-}
-
 window.addEventListener("beforeunload", function (event) {
   var checkBox = document.getElementById("check_save");
 
@@ -12,6 +6,23 @@ window.addEventListener("beforeunload", function (event) {
     event.returnValue = "";
   }
 });
+
+const showSearch = document.getElementById("searchbox");
+
+function toggleSearch() {
+  showSearch.classList.toggle("hidden");
+  if (showSearch.classList.contains("hidden")) {
+    document.removeEventListener("keydown", ESCkeydownListener);
+  } else {
+    document.addEventListener("keydown", ESCkeydownListener);
+  }
+}
+
+function ESCkeydownListener(event) {
+  if (event.key === "Escape") {
+    toggleSearch();
+  } else return;
+}
 
 const score_name = document.getElementById("score_name");
 const score_objective = document.getElementById("score_objective");
@@ -410,6 +421,6 @@ function alertBox(text) {
   alertBox.children[0].innerHTML = text;
   alertBox.style.display = "flex";
   setTimeout(function () {
-    alertBox.style.display = "";
-  }, 5000);
+    alertBox.style.display = "none";
+  }, 3000);
 }

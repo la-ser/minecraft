@@ -12,14 +12,19 @@
   </head>
   <style></style>
   <body>
-    <div style="display: none" id="alertBox"><p></p></div>
-    <a id="back" href="../../">BACK</a>
-    <a>Savemode:</a>
-    <input type="checkbox" id="check_save" />
-    <button id="searchButton" onclick="toggleSearch()">SEARCH</button>
+    <div id="header">
+      <div style="display: none" id="alertBox"><p></p></div>
+      <a id="back" href="../../">BACK</a>
+      <a>Savemode:</a>
+      <input type="checkbox" id="check_save" />
+      <button id="searchButton" onclick="toggleSearch()">SEARCH</button>
+    </div>
 
     <div id="searchbox" class="hidden">
-      <input type="range" min="10" max="50" value="25" id="searchSlider" />
+      <div id="searchbar_top">
+        <input style="width: 90%" type="range" min="10" max="50" value="25" id="searchSlider" />
+        <a style="width: 10%" onclick="toggleSearch()">X</a>
+      </div>
       <div id="sticky-input">
         <input type="number" min="1" placeholder="%" name="percentage" id="searchpercentage" />
         <input id="searchbar" onkeyup="search_item()" type="text" name="search" placeholder="Search for mc-list.." />
@@ -822,6 +827,8 @@
         <a data-name="ochre_froglight" class="mc-list mc-block" onclick="item_select('ochre_froglight', 'block')">ochre_froglight</a>
         <a data-name="verdant_froglight" class="mc-list mc-block" onclick="item_select('verdant_froglight', 'block')">verdant_froglight</a>
         <a data-name="pearlescent_froglight" class="mc-list mc-block" onclick="item_select('pearlescent_froglight', 'block')">pearlescent_froglight</a>
+        <a data-name="water" class="mc-list mc-block" onclick="item_select('water', 'block')">water</a>
+        <a data-name="lava" class="mc-list mc-block" onclick="item_select('lava', 'block')">lava</a>
 
         <!-- SUMMONS -->
 
