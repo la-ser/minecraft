@@ -141,6 +141,15 @@ div#input {
   background-color: rgb(31, 31, 31);
 }
 
+div#input select {
+  background-color: rgb(31, 31, 31);
+  border: none;
+  color: gray;
+  text-align: center;
+  padding: 0px 5px;
+  cursor: pointer;
+}
+
 textarea#input_code {
   background-color: rgb(31, 31, 31);
   color: white;

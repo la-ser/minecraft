@@ -829,6 +829,7 @@
         <a data-name="pearlescent_froglight" class="mc-list mc-block" onclick="item_select('pearlescent_froglight', 'block')">pearlescent_froglight</a>
         <a data-name="water" class="mc-list mc-block" onclick="item_select('water', 'block')">water</a>
         <a data-name="lava" class="mc-list mc-block" onclick="item_select('lava', 'block')">lava</a>
+        <a data-name="farmland" class="mc-list mc-block" onclick="item_select('farmland', 'block')">farmland</a>
 
         <!-- SUMMONS -->
 
@@ -960,6 +961,12 @@
         <div id="input">
           <textarea id="input_code" rows="1"></textarea>
           <button id="input_button" onclick="submitInput()">Submit</button>
+
+          <select name="Templates" id="template_select">
+            <option selected disabled value="overworld">Select Template</option>
+            <option value="overworld">Overworld</option>
+            <option value="the_nether">Nether</option>
+          </select>
 
           <a style="color: crimson; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="genCode()">GENERATE</a>
           <a style="color: limegreen; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="saveCode()">SAVE</a>

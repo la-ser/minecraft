@@ -166,7 +166,13 @@ function generateOutput() {
   }
   const output = ranges
     .map((range) => {
-      const rangeStr = `execute if score ${score_name.value} ${score_objective.value} matches ${range.from}..${range.to} run`;
+      var rangeStr = "";
+      if (range.from !== range.to) {
+        rangeStr = `execute if score ${score_name.value} ${score_objective.value} matches ${range.from}..${range.to} run`;
+      } else {
+        rangeStr = `execute if score ${score_name.value} ${score_objective.value} matches ${range.from} run`;
+      }
+
       if (range.option === "summon") {
         return `${rangeStr.padEnd(10)} summon ${range.text} ~ ~1 ~`;
       } else if (range.option === "block") {
@@ -423,4 +429,22 @@ function alertBox(text) {
   setTimeout(function () {
     alertBox.style.display = "none";
   }, 3000);
+}
+
+const template_select = document.getElementById("template_select");
+
+template_select.onchange = function () {
+  const selectedOption = template_select.value;
+
+  if (selectedOption === "overworld") {
+    clearTable();
+    loadTableData(``);
+  } else if (selectedOption === "the_nether") {
+    // Run function for option 2
+    console.log("Function for option 2 was called");
+  } else return;
+};
+
+function clearTable() {
+  table.innerHTML = "";
 }
