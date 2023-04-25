@@ -58,7 +58,8 @@ a {
 a#gen {
   padding: 0px 40px;
   background-color: limegreen;
-  display: none;
+  font-size: 25px;
+  /* display: none; */
 }
 
 a:hover {
