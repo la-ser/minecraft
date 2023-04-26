@@ -185,9 +185,44 @@ a#back {
 
 /* new */
 
+#notify {
+  padding: 0;
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#notify:hover {
+  filter: brightness(70%);
+}
+
+#notifyBox {
+  position: absolute;
+  background-color: rgb(25, 25, 25);
+  width: 200px;
+  height: fit-content;
+  max-height: 300px;
+  right: 0;
+  top: 0;
+  z-index: 12;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#notification {
+  position: relative;
+  top: 0px;
+  background-color: rgb(71, 71, 71);
+  text-align: center;
+  outline: 1px solid gray;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
 #searchButton {
   position: absolute;
-  right: 10px;
+  right: 50px;
   padding: 7px 15px;
 }
 

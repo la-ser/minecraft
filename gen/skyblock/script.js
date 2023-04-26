@@ -1,3 +1,13 @@
+var searchListItems = "";
+
+window.onload = function onLoad() {
+  searchListItems += genCodeFor("block", "./src/block.txt");
+  searchListItems += genCodeFor("summon", "./src/summon.txt");
+
+  const searchListHTML = document.getElementById("searchList");
+  searchListHTML.innerHTML = searchListItems;
+};
+
 window.addEventListener("beforeunload", function (event) {
   var checkBox = document.getElementById("check_save");
 
@@ -6,6 +16,34 @@ window.addEventListener("beforeunload", function (event) {
     event.returnValue = "";
   }
 });
+
+function readTextFile(file) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET", file, false);
+  xhttp.send();
+  return xhttp.responseText;
+}
+
+function convertString(inputString, before, middle, after, end) {
+  const words = inputString.split("\n");
+
+  const outputArray = words.map((word) => `${before}${word}${middle}${word}${after}${word}${end}\n`);
+
+  const outputString = outputArray.join("");
+
+  return outputString.replace(/\r?\n|\r/g, "");
+}
+
+function genCodeFor(type, url) {
+  const inputString = readTextFile(url);
+  const before = '<a data-name="';
+  const middle = `" class="mc-list mc-${type}" onclick="item_select('`;
+  const after = `', '${type}')">`;
+  const end = "</a>";
+  const outputString = convertString(inputString, before, middle, after, end);
+
+  return outputString;
+}
 
 const showSearch = document.getElementById("searchbox");
 
