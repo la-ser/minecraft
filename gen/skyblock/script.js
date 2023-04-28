@@ -361,9 +361,9 @@ function generateTableData() {
 }
 
 function loadTableData(data) {
-  while (table.children.length > 1) {
-    table.removeChild(table.lastElementChild);
-  }
+  // while (table.children.length > 1) {
+  //   table.removeChild(table.lastElementChild);
+  // }
 
   const rows = data.split("\n");
 
@@ -373,7 +373,7 @@ function loadTableData(data) {
     }
 
     const cells = rows[i].split(",");
-    const row = table.insertRow();
+    const row = tableBody.insertRow();
 
     for (let j = 0; j < cells.length; j++) {
       const cell = row.insertCell();
@@ -409,7 +409,7 @@ function loadTableData(data) {
     const button = document.createElement("button");
     button.textContent = "Remove";
     button.addEventListener("click", () => {
-      table.deleteRow(row.rowIndex);
+      tableBody.deleteRow(row.rowIndex);
     });
     cell.appendChild(button);
   }
@@ -581,6 +581,7 @@ function addToTable(data) {
 
 function clearTable() {
   const tableBody = document.getElementById("tableBody");
+  // console.log(tableBody.firstChild);
   while (tableBody.firstChild) {
     tableBody.removeChild(tableBody.firstChild);
   }
