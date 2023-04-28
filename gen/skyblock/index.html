@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
+            user-scalable=0"
+    />
+    <link rel="icon" href="https://la-ser.github.io/src/icons/L.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>laser Inc. • Skyblock Gen</title>
+  </head>
+  <body>
+    <div id="header">
+      <div style="display: none" id="alertBox"><p></p></div>
+      <a id="back" href="../../">BACK</a>
+      <a>Savemode:</a>
+      <input type="checkbox" id="check_save" />
+      <a id="notify">🔔</a>
+      <div id="notifyBox" class="hidden">
+        <div id="notification">
+          <h3>Thanks for using this generator!</h3>
+          <h5>This generator is the free variant of [DOMAIN-NAME]</h5>
+        </div>
+      </div>
+      <button id="searchButton" onclick="toggleSearch()">SEARCH</button>
+    </div>
+
+    <div id="searchbox" class="hidden">
+      <div id="searchbar_top">
+        <input style="width: 90%" type="range" min="10" max="50" value="25" id="searchSlider" />
+        <a style="width: 10%" onclick="toggleSearch()">X</a>
+      </div>
+      <div id="sticky-input">
+        <input type="number" min="1" placeholder="%" name="percentage" id="searchpercentage" />
+        <input id="searchbar" onkeyup="search_item()" type="text" name="search" placeholder="Search for mc-list.." />
+      </div>
+      <div id="searchCategories">
+        <a class="mc-list-cat" id="mc-all-cat">all</a>
+        <a class="mc-list-cat" id="mc-block-cat">blocks</a>
+        <a class="mc-list-cat" id="mc-summon-cat">summons</a>
+      </div>
+
+      <ol id="searchList"></ol>
+    </div>
+
+    <div id="main">
+      <div id="settings">
+        <div id="input">
+          <textarea id="input_code" rows="1"></textarea>
+          <button id="input_button" onclick="submitInput()">Submit</button>
+
+          <select name="Templates" id="template_select">
+            <option selected disabled value="none">Select Template</option>
+            <option value="overworld">Overworld</option>
+            <option value="the_nether">Nether</option>
+          </select>
+
+          <a style="color: crimson; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="genCode()">GENERATE</a>
+          <a style="color: limegreen; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="saveCode()">SAVE</a>
+          <a style="color: royalblue; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="loadCode()">LOAD</a>
+        </div>
+        <input type="text" id="score_name" value=".number" placeholder="score_name" />
+        <input type="text" id="score_objective" value="data_skyblock" placeholder="score_objective" />
+      </div>
+      <div id="rows">
+        <table id="ranges">
+          <thead id="tHead">
+            <tr>
+              <th>From</th>
+              <th>To</th>
+              <th>Event</th>
+              <th>Type</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td><input type="number" min="1" id="fromLoad" value="1" /></td>
+              <td><input type="number" min="1" id="toLoad" value="1000" /></td>
+              <td>
+                <input id="text" type="text" placeholder="dirt / chicken" />
+              </td>
+              <td>
+                <select>
+                  <option value="block">Block</option>
+                  <option value="summon">Summon</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td><button class="remove-row disabled">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="add-row">Add Row</button>
+        <button id="generate">Generate Output</button>
+      </div>
+      <textarea id="output" disabled></textarea>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

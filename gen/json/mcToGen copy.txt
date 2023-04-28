@@ -1,0 +1,31 @@
+1,200,netherrack,Block
+201,225,crimson_nylium,Block
+226,250,warped_nylium,Block
+251,300,magma_block,Block
+301,375,blackstone,Block
+376,450,basalt,Block
+451,490,nether_quartz_ore,Block
+491,500,nether_gold_ore,Block
+501,520,bone_block,Block
+521,550,soul_soil,Block
+551,570,soul_sand,Block
+571,590,shroomlight,Block
+591,595,crying_obsidian,Block
+596,600,gravel,Block
+601,625,warped_hyphae,Block
+626,650,crimson_hyphae,Block
+651,700,lava,Block
+701,715,crimson_fungus,Block
+716,730,warped_fungus,Block
+731,750,glowstone,Block
+751,780,summon piglin ~ ~1 ~,Summon
+781,800,summon enderman ~ ~1 ~,Summon
+801,850,summon zombified_piglin ~ ~1 ~,Summon
+851,875,summon wither_skeleton ~ ~1 ~,Summon
+876,900,summon magma_cube ~ ~1 ~,Summon
+901,950,summon skeleton ~ ~1 ~,Summon
+951,970,fill ~ ~1 ~ ~ ~1 ~ candle destroy,Other
+971,990,fill ~ ~1 ~ ~ ~1 ~ fire destroy,Other
+991,992,summon tnt ~ ~1 ~ {Fuse: 140},Other
+993,999,summon blaze ~ ~1 ~,Summon
+1000,1000,ancient_debris,Block

@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Border Game [datapack]",
+    "description": "Start with a small border and expand it as you gather more experience.",
+    "features": [
+      "start command [/trigger start]",
+      "auto border expansion",
+      "<a id='new'>Version 2</a>",
+      "<a id='warn'>ATTENTION: not compatible with the old version</a>"
+    ],
+    "link": "<a href='https://www.dropbox.com/s/i5re9bffzl1x2jv/Border%20Game%20v2.zip?dl=1'>Download</a>",
+    "date": "30.03.2023 | 09.04.2023",
+    "version": "1.3 | 2"
+  },
+  {
+    "name": "30 Seconds Item [datapack]",
+    "description": "Get a random every 30 seconds and test your luck.",
+    "features": ["get a random item every 30 seconds"],
+    "link": "<a href='https://www.dropbox.com/s/b0dbub6608jko00/laser%20DP%20-%2030%20sec%20item.zip?dl=1'>Download</a>",
+    "date": "08.04.2023",
+    "version": "1.1"
+  },
+  {
+    "name": "Random Block Drops [datapack]",
+    "description": "Get a random item from breaking blocks.",
+    "features": ["get a random item every 30 seconds", "<a id='new'>NEW</a>"],
+    "link": "<a href='https://www.dropbox.com/s/dzj9m9yzc5vvhuv/laser%20DP%20-%20random%20item.zip?dl=1'>Download</a>",
+    "date": "08.04.2023",
+    "version": "1.1"
+  },
+  {
+    "name": "Skyblock [world]",
+    "description": "Survive on a small island, break blocks to expand and survive.",
+    "features": [
+      "random events",
+      "percentage",
+      "new nether expansion",
+      "custom recipes",
+      "custom advancements [SOON]",
+      "<a id='gen' href='./gen/skyblock/'>Generator</a>"
+    ],
+    "link": "<a href='../skyblock'>Website</a>",
+    "date": "Coming Soon",
+    "version": "0.0"
+  }
+]

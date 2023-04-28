@@ -1,0 +1,87 @@
+1,200,dirt,Block
+201,300,cobblestone,Block
+301,315,granite,Block
+316,330,diorite,Block
+331,345,andesite,Block
+346,348,calcite,Block
+349,350,amethyst_block,Block
+351,430,oak_planks,Block
+431,470,oak_wood,Block
+471,525,coal_ore,Block
+526,550,iron_ore,Block
+551,575,sand,Block
+576,600,gravel,Block
+601,605,grass_block,Block
+606,610,gold_ore,Block
+611,625,water,Block
+626,630,lava,Block
+631,690,zombie,Summon
+691,745,skeleton,Summon
+746,750,cake,Block
+751,760,enderman,Summon
+761,775,creeper,Summon
+776,795,witch,Summon
+796,800,vindicator,Summon
+801,810,sheep,Summon
+811,820,cow,Summon
+821,830,chicken,Summon
+831,840,pig,Summon
+841,841,horse,Summon
+842,842,villager,Summon
+843,843,wolf,Summon
+844,844,donkey,Summon
+845,845,diamond_ore,Block
+846,847,fill ~ ~1 ~ ~ ~1 ~ sugar_cane destroy,Other
+848,849,fill ~ ~1 ~ ~ ~1 ~ cactus destroy,Other
+850,853,execute as @a at @s run playsound minecraft:entity.evoker.prepare_wololo master @a ~ ~ ~ 1 2,Other
+850,853,execute as @a at @s run tellraw @s TEXT,Other
+850,853,execute as @a at @s run fill ~1 ~120 ~1 ~-1 ~120 ~-1 pointed_dripstone[vertical_direction=down],Other
+854,855,execute as @a at @s run summon phantom ~ ~25 ~,Other
+855,865,farmland,Block
+855,865,fill ~ ~1 ~ ~ ~1 ~ wheat destroy,Other
+
+{"text":"<Markus> Watch out!","color":"white"}
+
+#########################################
+
+1,200,dirt,Block
+201,300,cobblestone,Block
+301,315,granite,Block
+316,330,diorite,Block
+331,345,andesite,Block
+346,348,calcite,Block
+349,350,amethyst_block,Block
+351,430,oak_planks,Block
+431,470,oak_wood,Block
+471,525,coal_ore,Block
+526,550,iron_ore,Block
+551,575,sand,Block
+576,600,gravel,Block
+601,605,grass_block,Block
+606,610,gold_ore,Block
+611,625,water,Block
+626,630,lava,Block
+631,690,zombie,Summon
+691,745,skeleton,Summon
+746,750,cake,Block
+751,760,enderman,Summon
+761,775,creeper,Summon
+776,795,witch,Summon
+796,800,vindicator,Summon
+801,810,sheep,Summon
+811,820,cow,Summon
+821,830,chicken,Summon
+831,840,pig,Summon
+841,841,horse,Summon
+842,842,villager,Summon
+843,843,wolf,Summon
+844,844,donkey,Summon
+845,845,diamond_ore,Block
+846,847,fill ~ ~1 ~ ~ ~1 ~ sugar_cane destroy,Other
+848,849,fill ~ ~1 ~ ~ ~1 ~ cactus destroy,Other
+850,853,execute as @a at @s run playsound minecraft:entity.evoker.prepare_wololo master @a ~ ~ ~ 1 2,Other
+850,853,execute as @a at @s run tellraw @s {"text":"<Markus> Watch out!"},Other
+850,853,execute as @a at @s run fill ~1 ~120 ~1 ~-1 ~120 ~-1 pointed_dripstone[vertical_direction=down],Other
+854,855,execute as @a at @s run summon phantom ~ ~25 ~,Other
+855,865,farmland,Block
+855,865,fill ~ ~1 ~ ~ ~1 ~ wheat destroy,Other
