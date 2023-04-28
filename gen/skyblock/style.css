@@ -12,6 +12,11 @@
   --color2: rgba(128, 128, 128, 0.2);
 }
 
+::selection {
+  color: rgb(205, 235, 255);
+  background: rgba(206, 206, 206, 0.3);
+}
+
 /*             Scrollbar             */
 
 ::-webkit-scrollbar {
@@ -72,6 +77,7 @@ div#rows {
   height: 100%;
   position: relative;
   box-sizing: border-box;
+  cursor: text;
 }
 
 td input,
@@ -123,7 +129,7 @@ button:hover {
 th {
   background-color: var(--color2);
 }
-#settings {
+#bottomSettings {
   display: flex;
   justify-content: center;
 }
@@ -189,7 +195,7 @@ a#back {
 
 /* new */
 
-#notify {
+#settings {
   padding: 0;
   position: absolute;
   right: 15px;
@@ -197,31 +203,8 @@ a#back {
   border-radius: 5px;
 }
 
-#notify:hover {
+#settings:hover {
   filter: brightness(70%);
-}
-
-#notifyBox {
-  position: absolute;
-  background-color: rgb(25, 25, 25);
-  width: 200px;
-  height: fit-content;
-  max-height: 300px;
-  right: 0;
-  top: 0;
-  z-index: 12;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-#notification {
-  position: relative;
-  top: 0px;
-  background-color: rgb(71, 71, 71);
-  text-align: center;
-  outline: 1px solid gray;
-  margin-top: 0px;
-  margin-bottom: 5px;
 }
 
 #searchButton {

@@ -15,14 +15,8 @@
       <div style="display: none" id="alertBox"><p></p></div>
       <a id="back" href="../../">BACK</a>
       <a>Savemode:</a>
-      <input type="checkbox" id="check_save" />
-      <a id="notify">🔔</a>
-      <div id="notifyBox" class="hidden">
-        <div id="notification">
-          <h3>Thanks for using this generator!</h3>
-          <h5>This generator is the free variant of [DOMAIN-NAME]</h5>
-        </div>
-      </div>
+      <input type="checkbox" id="check_save" title="toggle savemode" />
+      <a id="settings">⚙️</a>
       <button id="searchButton" onclick="toggleSearch()">SEARCH</button>
     </div>
 
@@ -45,7 +39,7 @@
     </div>
 
     <div id="main">
-      <div id="settings">
+      <div id="bottomSettings">
         <div id="input">
           <textarea id="input_code" rows="1"></textarea>
           <button id="input_button" onclick="submitInput()">Submit</button>
