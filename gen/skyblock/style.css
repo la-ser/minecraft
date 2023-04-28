@@ -1,6 +1,10 @@
 @font-face {
   font-family: Technofont;
-  src: url("./src/Technofont.ttf");
+  src: url("./src/TechnoFont.ttf");
+}
+@font-face {
+  font-family: Font2;
+  src: url("./src/Front2.ttf");
 }
 
 :root {
@@ -28,7 +32,7 @@
 
 * {
   outline: none;
-  /* font-family: Technofont; */
+  font-family: Font2;
   font-weight: bold;
 }
 
