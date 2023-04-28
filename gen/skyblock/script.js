@@ -80,7 +80,7 @@ const toLoad = document.getElementById("toLoad");
 addRowBtn.addEventListener("click", addRow);
 
 function addRow(iText, iType) {
-  const row = table.insertRow(-1);
+  const row = tableBody.insertRow(-1);
 
   const tableRows = table.rows;
 
@@ -485,6 +485,8 @@ template_select.onchange = function () {
 
   if (selectedOption === "overworld") {
     clearTable();
+    score_name.value = ".number";
+
     let overworld_data = `1,200,dirt,Block
     201,300,cobblestone,Block
     301,315,granite,Block
@@ -528,12 +530,12 @@ template_select.onchange = function () {
     855,865,fill ~ ~1 ~ ~ ~1 ~ wheat destroy,Other
     `;
 
-    let result = overworld_data.replace(/^\s+/gm, "");
-
-    loadTableData(result);
-    score_name.value = ".number";
+    template_select.value = "none";
+    addToTable(overworld_data);
   } else if (selectedOption === "the_nether") {
     clearTable();
+    score_name.value = ".number_nether";
+
     let nether_data = `1,200,netherrack,Block
     201,225,crimson_nylium,Block
     226,250,warped_nylium,Block
@@ -567,15 +569,19 @@ template_select.onchange = function () {
     1000,1000,ancient_debris,Block
     `;
 
-    let result = nether_data.replace(/^\s+/gm, "");
-
-    loadTableData(result);
-    score_name.value = ".number_nether";
-
     template_select.value = "none";
+    addToTable(nether_data);
   } else return;
 };
 
+function addToTable(data) {
+  let result = data.replace(/^\s+/gm, "");
+  loadTableData(result);
+}
+
 function clearTable() {
-  console.log(">\n> Clear Table Coming Soon!\n>");
+  const tableBody = document.getElementById("tableBody");
+  while (tableBody.firstChild) {
+    tableBody.removeChild(tableBody.firstChild);
+  }
 }
