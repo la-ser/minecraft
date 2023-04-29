@@ -13,9 +13,11 @@
   <body>
     <div id="header">
       <div style="display: none" id="alertBox"><p></p></div>
+      <div style="display: none" id="warnBox"><p></p></div>
+      <div id="bgOverlay"></div>
+
       <a id="back" href="../../">BACK</a>
-      <a>Savemode:</a>
-      <input type="checkbox" id="check_save" title="toggle savemode" />
+      <a id="saveMode">Savemode: <br /><input type="checkbox" id="check_save" title="toggle savemode" /></a>
       <a id="settings">⚙️</a>
       <button id="searchButton" onclick="toggleSearch()">SEARCH</button>
     </div>
@@ -38,21 +40,36 @@
       <ol id="searchList"></ol>
     </div>
 
+    <div id="settingsMenu" class="hidden">
+      <h3>Create your own template</h3>
+      <hr style="width: 100%" />
+      <p style="margin: 0; color: darkgray">Use [F2]</p>
+      <p style="margin-left: 25px; margin-right: 25px">Here you can save your tables and give them a name to load them again later.</p>
+      <hr style="width: 100%" />
+      <input type="text" id="template_name" placeholder="New Template" />
+      <button onclick="addOptionWithName()">Add Template</button>
+      <button onclick="removeOption()">Remove Template</button>
+      <select id="own_template_select">
+        <option disabled selected value="none">Select Own Template</option>
+      </select>
+      <button onclick="generateOption()">Generate Template</button>
+      <hr style="width: 100%" />
+      <select name="Templates" id="template_select">
+        <option selected disabled value="none">Select Presets</option>
+        <option value="overworld">Overworld</option>
+        <option value="the_nether">Nether</option>
+      </select>
+    </div>
+
     <div id="main">
-      <div id="bottomSettings">
+      <div id="settingsDiv">
         <div id="input">
           <textarea id="input_code" rows="1"></textarea>
           <button id="input_button" onclick="submitInput()">Submit</button>
 
-          <select name="Templates" id="template_select">
-            <option selected disabled value="none">Select Template</option>
-            <option value="overworld">Overworld</option>
-            <option value="the_nether">Nether</option>
-          </select>
-
-          <a style="color: crimson; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="genCode()">GENERATE</a>
+          <!-- <a style="color: crimson; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="genCode()">GENERATE</a>
           <a style="color: limegreen; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="saveCode()">SAVE</a>
-          <a style="color: royalblue; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="loadCode()">LOAD</a>
+          <a style="color: royalblue; font-size: 12px; font-weight: bold; cursor: pointer; margin-left: 5px; margin-right: 5px" onclick="loadCode()">LOAD</a> -->
         </div>
         <input type="text" id="score_name" value=".number" placeholder="score_name" />
         <input type="text" id="score_objective" value="data_skyblock" placeholder="score_objective" />

@@ -6,6 +6,10 @@ window.onload = function onLoad() {
 
   const searchListHTML = document.getElementById("searchList");
   searchListHTML.innerHTML = searchListItems;
+
+  //settings
+  document.addEventListener("keydown", F2keydownListener);
+  warnBox("BIG CHANGES", "Use the new settings menu (or [F2]) to save your own table template or select a default preset.");
 };
 
 window.addEventListener("beforeunload", function (event) {
@@ -478,13 +482,29 @@ function alertBox(text) {
   }, 3000);
 }
 
+const bgOverlay = document.getElementById("bgOverlay");
+
+function warnBox(title, text) {
+  const warnBox = document.getElementById("warnBox");
+  warnBox.children[0].innerHTML = `<h3>${title}</h3><p style="margin-left:10px;margin-right:10px">${text}</p>`;
+  warnBox.style.display = "";
+  warnBox.addEventListener("click", () => {
+    bgOverlay.style.display = "";
+    warnBox.style.display = "none";
+  });
+
+  bgOverlay.style.display = "block";
+  // setTimeout(function () {
+  //   warnBox.style.display = "none";
+  // }, 7000);
+}
+
 const template_select = document.getElementById("template_select");
 
 template_select.onchange = function () {
   const selectedOption = template_select.value;
 
   if (selectedOption === "overworld") {
-    clearTable();
     score_name.value = ".number";
 
     let overworld_data = `1,200,dirt,Block
@@ -533,7 +553,6 @@ template_select.onchange = function () {
     template_select.value = "none";
     addToTable(overworld_data);
   } else if (selectedOption === "the_nether") {
-    clearTable();
     score_name.value = ".number_nether";
 
     let nether_data = `1,200,netherrack,Block
@@ -575,6 +594,7 @@ template_select.onchange = function () {
 };
 
 function addToTable(data) {
+  clearTable();
   let result = data.replace(/^\s+/gm, "");
   loadTableData(result);
 }
@@ -585,4 +605,125 @@ function clearTable() {
   while (tableBody.firstChild) {
     tableBody.removeChild(tableBody.firstChild);
   }
+}
+
+//settings
+
+const settingsButton = document.getElementById("settings");
+const settingsMenu = document.getElementById("settingsMenu");
+
+settingsButton.addEventListener("click", () => {
+  settingsMenu.classList.toggle("hidden");
+});
+
+// options
+window.addEventListener("load", function () {
+  var savedValue = getCookie("own_template_select");
+  if (savedValue !== "") {
+    document.getElementById("own_template_select").value = savedValue;
+  }
+});
+
+window.addEventListener("unload", function () {
+  var selectMenu = document.getElementById("own_template_select");
+  var selectedValue = selectMenu.options[selectMenu.selectedIndex].value;
+  setCookie("own_template_select", selectedValue);
+});
+
+function addOption(name) {
+  var selectMenu = document.getElementById("own_template_select");
+
+  for (var i = 0; i < selectMenu.options.length; i++) {
+    if (selectMenu.options[i].text === name) {
+      selectMenu.selectedIndex = i;
+      return;
+    }
+  }
+
+  var newOption = document.createElement("option");
+  const tableData = generateTableData();
+  newOption.text = name ?? "New Template";
+  newOption.setAttribute("data-tablecode", `${tableData}`);
+  selectMenu.add(newOption);
+  selectMenu.selectedIndex = selectMenu.options.length - 1;
+  saveOptions(selectMenu);
+}
+
+function addOptionWithName() {
+  const template_name = document.getElementById("template_name");
+  if (template_name.value != "") {
+    addOption(template_name.value);
+  } else {
+    addOption();
+  }
+}
+
+function removeOption() {
+  var selectMenu = document.getElementById("own_template_select");
+  var selectedOption = selectMenu.options[selectMenu.selectedIndex];
+  if (!selectedOption.disabled) {
+    selectMenu.remove(selectMenu.selectedIndex);
+    saveOptions(selectMenu);
+  }
+}
+
+function saveOptions(selectMenu) {
+  var options = [];
+  for (var i = 0; i < selectMenu.options.length; i++) {
+    if (!selectMenu.options[i].disabled) {
+      var optionData = {
+        text: selectMenu.options[i].text,
+        dataTableData: selectMenu.options[i].getAttribute("data-tablecode"),
+      };
+      options.push(optionData);
+    }
+  }
+  setCookie("own_template_select_Options", JSON.stringify(options));
+}
+
+function loadOptions(selectMenu) {
+  var savedOptions = getCookie("own_template_select_Options");
+  if (savedOptions !== "") {
+    var options = JSON.parse(savedOptions);
+    for (var i = 0; i < options.length; i++) {
+      var newOption = document.createElement("option");
+      newOption.text = options[i].text;
+      newOption.setAttribute("data-tablecode", options[i].dataTableData);
+      selectMenu.add(newOption);
+    }
+
+    for (var i = 0; i < selectMenu.options.length; i++) {
+      if (selectMenu.options[i].disabled) {
+        selectMenu.selectedIndex = i;
+        break;
+      }
+    }
+  }
+}
+
+window.addEventListener("load", function () {
+  var selectMenu = document.getElementById("own_template_select");
+  loadOptions(selectMenu);
+});
+
+var selectOptionMenu = document.getElementById("own_template_select");
+// selectOptionMenu.addEventListener("change", () => {
+//   generateOption(selectOptionMenu.selectedIndex);
+//   // console.log(selectOptionMenu.selectedIndex);
+//   // selectOptionMenu.value = "none";
+// });
+
+function generateOption() {
+  var selectedOption = selectOptionMenu.options[selectOptionMenu.selectedIndex];
+  const dataTableData = selectedOption.getAttribute("data-tablecode");
+  // console.log(dataTableData);
+  if (dataTableData == null) return;
+  clearTable();
+  loadTableData(dataTableData);
+}
+
+function F2keydownListener(event) {
+  if (event.key === "F2") {
+    settingsMenu.classList.toggle("hidden");
+  } else return;
 }

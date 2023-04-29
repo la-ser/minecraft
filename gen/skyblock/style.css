@@ -129,9 +129,14 @@ button:hover {
 th {
   background-color: var(--color2);
 }
-#bottomSettings {
+#settingsDiv {
   display: flex;
   justify-content: center;
+  width: 100vw;
+}
+
+#settingsDiv input {
+  width: 25%;
 }
 
 #score_name,
@@ -149,6 +154,7 @@ div#input {
   display: flex;
   align-items: center;
   background-color: rgb(31, 31, 31);
+  max-width: 100vw;
 }
 
 div#input select {
@@ -185,6 +191,17 @@ button.disabled {
 div#header {
   display: flex;
   align-items: center;
+}
+
+#saveMode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#saveMode input {
+  height: 15px;
+  aspect-ratio: 1;
 }
 
 a#back {
@@ -385,4 +402,77 @@ div#alertBox {
   justify-content: center;
   display: flex;
   pointer-events: none;
+}
+
+div#warnBox {
+  position: absolute;
+  width: 600px;
+  aspect-ratio: 4;
+  background-color: rgb(212, 26, 26);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  z-index: 20;
+  outline: 2px dashed white;
+  outline-offset: -10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  /* pointer-events: none; */
+  cursor: pointer;
+}
+
+#settingsMenu {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  max-width: 850px;
+  height: fit-content;
+  max-height: 65%;
+  background-color: rgb(53, 53, 53);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 12;
+  text-align: center;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  outline: 1px solid white;
+}
+
+#settingsMenu button,
+input,
+select,
+option {
+  width: 100%;
+  margin: 0;
+  margin-top: 5px;
+}
+
+#own_template_select {
+  background-color: var(--color1);
+  color: white;
+  text-align: center;
+}
+
+#template_select {
+  background-color: var(--color1);
+  color: white;
+  text-align: center;
+}
+
+#bgOverlay {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 19;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
