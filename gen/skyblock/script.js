@@ -365,6 +365,7 @@ function generateTableData() {
 }
 
 function loadTableData(data) {
+  console.log("LOAD");
   // while (table.children.length > 1) {
   //   table.removeChild(table.lastElementChild);
   // }
@@ -390,7 +391,7 @@ function loadTableData(data) {
         const options = ["Block", "Summon", "Other"];
         for (let k = 0; k < options.length; k++) {
           const option = document.createElement("option");
-          option.value = options[k];
+          option.value = options[k].toLowerCase();
           option.text = options[k];
           select.appendChild(option);
         }
