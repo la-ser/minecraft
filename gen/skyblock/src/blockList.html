@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea id="textArea" cols="30" rows="10"></textarea>
+  </body>
+  <script>
+    // Fetch the content of the .txt file
+    fetch("blockList.txt")
+      .then((response) => response.text())
+      .then((strings) => {
+        const trimmedStrings = strings.split("\n").map((str) => {
+          const pngIndex = str.indexOf(".png");
+          const jeIndex = str.indexOf("JE");
+          const bracketIndex = str.indexOf("(");
+
+          let endIndex;
+          if (jeIndex !== -1 && jeIndex < pngIndex) {
+            endIndex = jeIndex;
+          } else {
+            endIndex = pngIndex;
+          }
+
+          if (bracketIndex !== -1 && bracketIndex < endIndex) {
+            return str.slice(0, bracketIndex).trim().toLowerCase().replace(/\s+/g, "_");
+          } else {
+            return endIndex !== -1 ? str.slice(0, endIndex).trim().toLowerCase().replace(/\s+/g, "_") : str;
+          }
+        });
+
+        const textArea = document.body;
+        textArea.innerText = trimmedStrings.join("\n");
+      })
+      .catch((error) => console.error("Error fetching the file:", error));
+  </script>
+</html>
+<!-- 
+https://minecraft.wiki/w/Block -->

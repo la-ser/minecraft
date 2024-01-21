@@ -506,7 +506,7 @@ template_select.onchange = function () {
   const selectedOption = template_select.value;
 
   if (selectedOption === "overworld") {
-    score_name.value = ".number";
+    score_name.value = ".block_overworld";
 
     let overworld_data = `1,200,dirt,Block
     201,300,cobblestone,Block

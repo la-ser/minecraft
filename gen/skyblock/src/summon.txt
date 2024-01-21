@@ -8,6 +8,7 @@ bee
 blaze
 block_display
 boat
+camel
 cat
 cave_spider
 chest_boat
@@ -50,7 +51,6 @@ hopper_minecart
 horse
 husk
 illusioner
-interaction
 iron_golem
 item
 item_display
@@ -87,6 +87,7 @@ skeleton
 skeleton_horse
 slime
 small_fireball
+sniffer
 snow_golem
 snowball
 spawner_minecart

@@ -1,0 +1,341 @@
+allay	Allay
+(minecraft:allay)	Example
+Summon allay
+area effect cloud	Area effect cloud
+(minecraft:area_effect_cloud)	 
+armor stand	Armor stand
+(minecraft:armor_stand)	Examples (or NBT Tags)
+Summon armor stand
+Summon armor stand with chain armor
+Summon armor stand with diamond armor
+Show/hide arms on armor stand
+arrow	Arrow
+(minecraft:arrow)	 
+axolotl	Axolotl
+(minecraft:axolotl)	Example
+Summon axolotl
+bat	Bat
+(minecraft:bat)	Example (or NBT Tags)
+Summon bat
+bee	Bee
+(minecraft:bee)	Example (or NBT Tags)
+Summon bee
+blaze	Blaze
+(minecraft:blaze)	Example (or NBT Tags)
+Summon blaze
+block display	Block Display
+(minecraft:block_display)	
+boat	Boat
+(minecraft:boat)	Example (or NBT Tags)
+Summon boat
+camel	Camel
+(minecraft:camel)	Example
+Summon camel
+cat	Cat
+(minecraft:cat)	Example (or NBT Tags)
+Summon cat
+cave spider	Cave spider
+(minecraft:cave_spider)	Example (or NBT Tags)
+Summon cave spider
+chest boat	Boat with Chest
+(minecraft:chest_boat)	 
+minecart with chest	Minecart with Chest
+(minecraft:chest_minecart)	 
+chicken	Chicken
+(minecraft:chicken)	Example (or NBT Tags)
+Summon chicken
+cod	Cod
+(minecraft:cod)	Example (or NBT Tags)
+Summon cod
+minecart with command block	Minecart with Command Block
+(minecraft:command_block_minecart)	 
+cow	Cow
+(minecraft:cow)	Examples (or NBT Tags)
+Summon cow
+Summon cow with name
+creeper	Creeper
+(minecraft:creeper)	Examples (or NBT Tags)
+Summon creeper
+Summon charged creeper
+dolphin	Dolphin
+(minecraft:dolphin)	Example (or NBT Tags)
+Summon dolphin
+donkey	Donkey
+(minecraft:donkey)	Example (or NBT Tags)
+Summon donkey
+ender dragon	Dragon fireball
+(minecraft:dragon_fireball)	 
+drowned	Drowned
+(minecraft:drowned)	Example (or NBT Tags)
+Summon drowned
+egg	Egg
+(minecraft:egg)	 
+elder guardian	Elder Guardian
+(minecraft:elder_guardian)	Example (or NBT Tags)
+Summon elder guardian
+ender crystal	End crystal
+(minecraft:end_crystal)	Example (or NBT Tags)
+Summon end crystal
+ender dragon	Ender dragon
+(minecraft:ender_dragon)	Example (or NBT Tags)
+Summon ender dragon
+ender pearl	Ender pearl
+(minecraft:ender_pearl)	 
+enderman	Enderman
+(minecraft:enderman)	Example (or NBT Tags)
+Summon enderman
+endermite	Endermite
+(minecraft:endermite)	Example (or NBT Tags)
+Summon endermite
+evoker	Evoker
+(minecraft:evoker)	Example (or NBT Tags)
+Summon evoker
+evocation fangs	Evoker fangs
+(minecraft:evoker_fangs)	 
+thrown experience bottle	Thrown experience bottle
+(minecraft:experience_bottle)	 
+experience	Experience orb
+(minecraft:experience_orb)	 
+eye of ender	Eye of Ender
+(minecraft:eye_of_ender)	 
+falling sand	Falling block
+(minecraft:falling_block)	 
+fireball	Fireball
+(minecraft:fireball)	Example (or NBT Tags)
+Summon fireball
+firework rocket	Firework rocket
+(minecraft:firework_rocket)	Example (or NBT Tags)
+fox	Fox
+(minecraft:fox)	Example (or NBT Tags)
+Summon fox
+frog	Frog
+(minecraft:frog)	Example
+Summon frog
+minecart with furnace	Minecart with Furnace
+(minecraft:furnace_minecart)	 
+ghast	Ghast
+(minecraft:ghast)	Example (or NBT Tags)
+Summon ghast
+giant	Giant zombie
+(minecraft:giant)	Example (or NBT Tags)
+Summon giant zombie
+glow item frame	Glow Item Frame
+(minecraft:glow_item_frame)	 
+glow squid	Glow Squid
+(minecraft:glow_squid)	Example
+Summon glow squid
+goat	Goat
+(minecraft:goat)	Example
+Summon goat
+guardian	Guardian
+(minecraft:guardian)	Example (or NBT Tags)
+Summon guardian
+hoglin	Hoglin
+(minecraft:hoglin)	Example (or NBT Tags)
+Summon hoglin
+minecart with hopper	Minecart with Hopper
+(minecraft:hopper_minecart)	 
+horse	Horse
+(minecraft:horse)	Examples (or NBT Tags)
+Summon horse
+Summon horse with armor
+Summon tame horse
+husk	Husk
+(minecraft:husk)	Example (or NBT Tags)
+Summon husk
+illusioner	Illusioner
+(minecraft:illusioner)	Example (or NBT Tags)
+Summon illusioner
+iron golem	Iron Golem
+(minecraft:iron_golem)	Example (or NBT Tags)
+Summon iron golem
+item	Item
+(minecraft:item)	 
+item display	Item Display
+(minecraft:item_display)	
+item frame	Item frame
+(minecraft:item_frame)	 
+lead	Lead
+(minecraft:leash_knot)	 
+lightning bolt	Lightning bolt
+(minecraft:lightning_bolt)	Example
+Summon lightning bolt
+llama	Llama
+(minecraft:llama)	Example (or NBT Tags)
+Summon llama
+llama	Llama spit
+(minecraft:llama_spit)	 
+magma cube	Magma cube
+(minecraft:magma_cube)	Example (or NBT Tags)
+Summon magma cube
+marker	Marker
+(minecraft:marker)	 
+minecart rideable	Minecart
+(minecraft:minecart)	 
+mooshroom	Mooshroom
+(minecraft:mooshroom)	Example (or NBT Tags)
+Summon mooshroom
+mule	Mule
+(minecraft:mule)	Example (or NBT Tags)
+Summon mule
+ocelot	Ocelot
+(minecraft:ocelot)	Examples (or NBT Tags)
+Summon ocelot
+Summon tame ocelot
+painting	Painting
+(minecraft:painting)	 
+panda	Panda
+(minecraft:panda)	Example (or NBT Tags)
+Summon panda
+parrot	Parrot
+(minecraft:parrot)	Example (or NBT Tags)
+Summon parrot
+phantom	Phantom
+(minecraft:phantom)	Example (or NBT Tags)
+Summon phantom
+pig	Pig
+(minecraft:pig)	Example (or NBT Tags)
+Summon pig
+Summon pig with saddle
+piglin	Piglin
+(minecraft:piglin)	Example (or NBT Tags)
+Summon piglin
+piglin brute	Piglin Brute
+(minecraft:piglin_brute)	Example
+Summon piglin brute
+pillager	Pillager
+(minecraft:pillager)	Example (or NBT Tags)
+Summon pillager
+polar bear	Polar Bear
+(minecraft:polar_bear)	Example (or NBT Tags)
+Summon polar bear
+thrown potion	Thrown potion
+(minecraft:potion)	 
+pufferfish	Pufferfish
+(minecraft:pufferfish)	Example (or NBT Tags)
+Summon pufferfish
+rabbit	Rabbit
+(minecraft:rabbit)	Example (or NBT Tags)
+Summon rabbit
+Summon killer bunny
+ravager	Ravager
+(minecraft:ravager)	Example (or NBT Tags)
+Summon ravager
+salmon	Salmon
+(minecraft:salmon)	Example (or NBT Tags)
+Summon salmon
+sheep	Sheep
+(minecraft:sheep)	Example (or NBT Tags)
+Summon sheep
+shulker	Shulker
+(minecraft:shulker)	Example (or NBT Tags)
+Summon shulker
+shulker bullet	Shulker bullet
+(minecraft:shulker_bullet)	Example (or NBT Tags)
+Summon shulker bullet
+silverfish	Silverfish
+(minecraft:silverfish)	Example (or NBT Tags)
+Summon silverfish
+skeleton	Skeleton
+(minecraft:skeleton)	Example (or NBT Tags)
+Summon skeleton
+skeleton horse	Skeleton horse
+(minecraft:skeleton_horse)	Examples (or NBT Tags)
+Summon skeleton horse
+Summon skeleton trap
+slime	Slime
+(minecraft:slime)	Examples (or NBT Tags)
+Summon slime
+Summon giant slime
+small fireball	Small fireball
+(minecraft:small_fireball)	 
+sniffer	Sniffer
+(minecraft:sniffer)	Example
+Summon sniffer
+snow man	Snow man or snow golem
+(minecraft:snow_golem)	Example (or NBT Tags)
+Summon snow man
+snowball	Snowball
+(minecraft:snowball)	 
+minecart with spawner	Minecart with spawner
+(minecraft:spawner_minecart)	 
+spectral arrow	Spectral arrow
+(minecraft:spectral_arrow)	 
+spider	Spider
+(minecraft:spider)	Example (or NBT Tags)
+Summon spider
+squid	Squid
+(minecraft:squid)	Example (or NBT Tags)
+Summon squid
+stray	Stray
+(minecraft:stray)	Example (or NBT Tags)
+Summon stray
+strider	Strider
+(minecraft:strider)	Example (or NBT Tags)
+Summon strider
+tadpole	Tadpole
+(minecraft:tadpole)	Example
+Summon tadpole
+text display	Text Display
+(minecraft:text_display)	
+primed tnt	TNT
+(minecraft:tnt)	 
+arrow	Minecart with TNT
+(minecraft:tnt_minecart)	 
+trader llama	Trader Llama
+(minecraft:trader_llama)	Example (or NBT Tags)
+Summon trader llama
+trident	Trident
+(minecraft:trident)	
+tropical fish	Tropical Fish
+(minecraft:tropical_fish)	Example (or NBT Tags)
+Summon tropical fish
+turtle	Turtle
+(minecraft:turtle)	Example (or NBT Tags)
+Summon turtle
+vex	Vex
+(minecraft:vex)	Example (or NBT Tags)
+Summon vex
+villager	Villager
+(minecraft:villager)	Example (or NBT Tags)
+Summon villager
+vindicator	Vindicator
+(minecraft:vindicator)	Example (or NBT Tags)
+Summon vindicator
+wandering trader	Wandering Trader
+(minecraft:wandering_trader)	Example (or NBT Tags)
+Summon wandering trader
+warden	Warden
+(minecraft:warden)	Example
+Summon the Warden
+witch	Witch
+(minecraft:witch)	Example (or NBT Tags)
+Summon witch
+wither boss	Wither boss
+(minecraft:wither)	Example (or NBT Tags)
+Summon wither boss
+wither skeleton	Wither skeleton
+(minecraft:wither_skeleton)	Example (or NBT Tags)
+Summon wither skeleton
+wither skull	Wither skeleton skull
+(minecraft:wither_skull)	 
+wolf	Wolf
+(minecraft:wolf)	Examples (or NBT Tags)
+Summon wolf
+Summon tame wolf
+Change colar color for tamed wolf
+zoglin	Zoglin
+(minecraft:zoglin)	Example (or NBT Tags)
+Summon zoglin
+zombie	Zombie
+(minecraft:zombie)	Example (or NBT Tags)
+Summon zombie
+zombie horse	Zombie horse
+(minecraft:zombie_horse)	Example (or NBT Tags)
+Summon zombie horse
+zombie villager	Zombie Villager
+(minecraft:zombie_villager)	Example (or NBT Tags)
+Summon zombie villager
+zombie pigman	Zombified Piglin
+(minecraft:zombified_piglin	Example (or NBT Tags)
+Summon zombified piglin
